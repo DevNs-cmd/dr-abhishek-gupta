@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================================================
+   Dr. Abhishek Gupta — Academic Platform Design System
+   Apple iOS / visionOS Glassmorphism & Fluid Responsive Theme
+   ============================================================================ */
+
+:root {
+  /* ── Canvas & Surface Colors ── */
+  --color-canvas:        #fbfbfd;
+  --color-surface-glass: rgba(255, 255, 255, 0.75);
+  --color-surface-card:  rgba(255, 255, 255, 0.82);
+  --color-border-glass:  rgba(255, 255, 255, 0.88);
+  --color-border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* ── Typography (SF / Geist Style) ── */
+  --color-text-primary:   #1d1d1f;
+  --color-text-secondary: #515154;
+  --color-text-tertiary:  #86868b;
+
+  /* ── iOS Accent Blues & Purples ── */
+  --color-accent:         #0071e3;
+  --color-accent-hover:   #0077ed;
+  --color-accent-soft:    rgba(0, 113, 227, 0.08);
+
+  /* ── iOS Squircle Radii ── */
+  --radius-xs:   10px;
+  --radius-sm:   14px;
+  --radius-md:   20px;
+  --radius-lg:   26px;
+  --radius-xl:   34px;
+  --radius-full: 9999px;
+
+  /* ── Apple Easing Curves ── */
+  --ease-apple:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Base Resets ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Focus Styles ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ── iOS Frosted Glass Utilities ── */
+.ios-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 12px 32px -4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
+}
+
+.ios-glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 14px 36px -8px rgba(0, 0, 0, 0.04),
+    0 2px 6px -1px rgba(0, 0, 0, 0.02),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ios-glass-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow:
+    0 24px 48px -10px rgba(0, 0, 0, 0.08),
+    0 4px 12px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.ios-glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* ── iOS Segmented Control ── */
+.ios-segmented {
+  background: rgba(118, 118, 128, 0.12);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 9999px;
+  padding: 3px;
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.ios-segmented-item {
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  color: #515154;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ios-segmented-item.active {
+  background: #ffffff;
+  color: #1d1d1f;
+  font-weight: 600;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Ambient Background Mesh (Fixed behind whole app) ── */
+.ios-ambient-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ios-orb-1 {
+  position: absolute;
+  top: -15%;
+  right: -10%;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 231, 255, 0.65) 0%, rgba(243, 232, 255, 0.3) 45%, transparent 70%);
+  filter: blur(60px);
+}
+
+.ios-orb-2 {
+  position: absolute;
+  top: 35%;
+  left: -15%;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219, 234, 254, 0.55) 0%, rgba(240, 249, 255, 0.3) 50%, transparent 70%);
+  filter: blur(65px);
+}
+
+.ios-orb-3 {
+  position: absolute;
+  bottom: -10%;
+  right: 15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 243, 199, 0.35) 0%, rgba(254, 226, 226, 0.2) 45%, transparent 70%);
+  filter: blur(70px);
+}
+
+/* ── Custom Scrollbars ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ── Section Spacing ── */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* ── Fade In Animation ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
