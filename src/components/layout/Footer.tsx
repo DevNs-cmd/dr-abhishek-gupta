@@ -89,19 +89,34 @@ export function Footer({ professor }: FooterProps) {
             &copy; {new Date().getFullYear()} {professor.name}. Associated with New Delhi Institute of Management.
           </p>
 
-          {/* AlgoForce AI — Subtle Supporting Brand */}
-          <div className="flex items-center gap-2.5 order-1 sm:order-2">
-            <span className="text-[0.72rem] text-zinc-400 font-medium">Powered by</span>
-            <div className="flex items-center ios-glass-pill rounded-full px-3 py-1 shadow-xs cursor-default">
+          {/* AlgoForce AI — Technology Platform Partner */}
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 order-1 sm:order-2">
+            <span className="text-[0.78rem] text-zinc-400 font-medium">Powered by</span>
+            <a
+              href="https://www.algoforceaii.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/80 hover:bg-white border border-zinc-200/90 shadow-xs hover:shadow-sm hover:border-zinc-300 transition-all duration-200"
+              title="Visit AlgoForce AI (www.algoforceaii.com)"
+            >
               <Image
                 src="/algoforce.png"
-                alt="AlgoForce AI"
-                width={84}
+                alt="AlgoForce AI Logo"
+                width={80}
                 height={20}
-                className="h-4.5 w-auto object-contain"
+                className="h-4.5 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
                 style={{ mixBlendMode: "multiply" }}
               />
-            </div>
+              <span className="text-[0.82rem] font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">
+                AlgoForce AI
+              </span>
+              <span className="text-[0.72rem] text-zinc-400 font-medium group-hover:text-blue-600 transition-colors hidden sm:inline">
+                www.algoforceaii.com
+              </span>
+              <span className="text-[0.7rem] text-zinc-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                ↗
+              </span>
+            </a>
           </div>
         </div>
 

@@ -52,15 +52,41 @@ export function HeroSection({ professor }: HeroSectionProps) {
 
           {/* Left Column: Text & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
-            {/* Eyebrow badge */}
+            {/* Eyebrow & Platform Partner Badges */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 self-center lg:self-start px-3.5 py-1.5 rounded-full ios-glass-pill text-[0.75rem] font-semibold tracking-wider text-indigo-700 uppercase mb-6"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
-              Academic &bull; Technology &bull; Learning
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full ios-glass-pill text-[0.75rem] font-semibold tracking-wider text-indigo-700 uppercase">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                Academic &bull; Technology &bull; Learning
+              </div>
+
+              <a
+                href="https://www.algoforceaii.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 hover:bg-white border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-200"
+                title="Powered by AlgoForce AI (www.algoforceaii.com)"
+              >
+                <span className="text-[0.72rem] text-zinc-500 font-medium">Powered by</span>
+                <Image
+                  src="/algoforce.png"
+                  alt="AlgoForce AI"
+                  width={68}
+                  height={16}
+                  className="h-3.5 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                  style={{ mixBlendMode: "multiply" }}
+                />
+                <span className="text-[0.75rem] font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">
+                  AlgoForce AI
+                </span>
+                <span className="text-[0.68rem] text-zinc-400 group-hover:text-blue-600 font-medium group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                  ↗
+                </span>
+              </a>
             </motion.div>
 
             {/* Headline */}

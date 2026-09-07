@@ -109,6 +109,30 @@ export function Navbar({ professor }: NavbarProps) {
 
             {/* Action CTA + Mobile Trigger */}
             <div className="flex items-center gap-2.5 shrink-0">
+              <a
+                href="https://www.algoforceaii.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/[0.03] hover:bg-black/[0.06] border border-black/[0.06] text-[0.72rem] transition-all duration-200 group"
+                title="Powered by AlgoForce AI (www.algoforceaii.com)"
+              >
+                <span className="text-zinc-400 font-normal">Powered by</span>
+                <Image
+                  src="/algoforce.png"
+                  alt="AlgoForce AI"
+                  width={56}
+                  height={14}
+                  className="h-3 w-auto object-contain"
+                  style={{ mixBlendMode: "multiply" }}
+                />
+                <span className="font-semibold text-zinc-800 group-hover:text-blue-600 transition-colors">
+                  AlgoForce AI
+                </span>
+                <span className="text-[0.65rem] text-zinc-400 group-hover:text-blue-600 transition-colors">
+                  ↗
+                </span>
+              </a>
+
               <Link
                 href="/notes"
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#1d1d1f] hover:bg-black text-white text-xs font-semibold rounded-full shadow-sm hover:shadow-md active:scale-95 transition-all duration-200"
@@ -211,6 +235,25 @@ export function Navbar({ professor }: NavbarProps) {
           >
             Contact / Counseling
           </Link>
+
+          <a
+            href="https://www.algoforceaii.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white border border-zinc-200/80 shadow-xs text-xs text-zinc-600 hover:text-zinc-950 font-medium transition-colors"
+          >
+            <span className="text-zinc-400">Powered by</span>
+            <Image
+              src="/algoforce.png"
+              alt="AlgoForce AI"
+              width={64}
+              height={16}
+              className="h-3.5 w-auto object-contain"
+              style={{ mixBlendMode: "multiply" }}
+            />
+            <span className="font-bold text-zinc-900">AlgoForce AI</span>
+            <span className="text-[0.7rem] text-zinc-400">↗</span>
+          </a>
         </div>
       </div>
     </>
