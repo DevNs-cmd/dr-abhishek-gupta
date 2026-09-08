@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Users, BookOpen, Cpu, GraduationCap, Wrench, Briefcase, Award, ShieldCheck, CheckCircle2, ExternalLink, Building2, Rocket } from "lucide-react";
 import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
@@ -113,14 +114,26 @@ export function AboutSection({ professor }: AboutSectionProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3 ios-glass-card rounded-[28px] p-7 sm:p-9 shadow-md"
           >
-            <span className="inline-flex items-center gap-1.5 text-[0.72rem] font-bold text-indigo-700 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-3 py-1 mb-5">
-              <Users size={12} />
-              Academic & Leadership Profile
-            </span>
-
-            <h3 className="text-2xl font-bold text-zinc-900 tracking-tight mb-4">
-              Educator, Placement Leader, and Technology Strategist
-            </h3>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-6 pb-6 border-b border-black/[0.06]">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-white shadow-md shrink-0 bg-indigo-50">
+                <Image
+                  src={professor.photo}
+                  alt={`${professor.name} portrait`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 80px, 96px"
+                />
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-[0.72rem] font-bold text-indigo-700 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-3 py-1 mb-2">
+                  <Users size={12} />
+                  Academic & Leadership Profile
+                </span>
+                <h3 className="text-2xl font-bold text-zinc-900 tracking-tight">
+                  Educator, Placement Leader, and Technology Strategist
+                </h3>
+              </div>
+            </div>
 
             <div className="space-y-4 text-zinc-600 text-[0.93rem] leading-relaxed">
               <p>
