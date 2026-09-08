@@ -56,9 +56,22 @@ export function Footer({ professor }: FooterProps) {
             <p className="text-zinc-500 text-[0.875rem] leading-relaxed max-w-sm">
               {professor.shortBio}
             </p>
-            <p className="text-[0.8rem] text-zinc-400 font-medium">
-              {professor.institution}
-            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <p className="text-[0.8rem] text-zinc-400 font-medium">
+                {professor.institution}
+              </p>
+              <span className="text-zinc-300 text-xs">&bull;</span>
+              <a
+                href={professor.orcidUrl ?? "https://orcid.org/0009-0000-9701-246X"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[0.75rem] font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 px-2.5 py-0.5 rounded-full transition-colors"
+                title="Verify Researcher Record on ORCID"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                ORCID: 0009-0000-9701-246X ↗
+              </a>
+            </div>
           </div>
 
           {/* Nav Columns */}

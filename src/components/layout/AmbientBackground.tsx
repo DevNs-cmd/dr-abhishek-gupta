@@ -41,17 +41,17 @@ export function AmbientBackground() {
       className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none"
       aria-hidden="true"
     >
-      {/* Poster fallback — shown instantly before video loads */}
+      {/* Poster fallback — shown before video loads */}
       <img
         src="/bg-video-poster.jpg"
         alt=""
-        className={`absolute inset-0 w-full h-full object-cover object-center transform-gpu scale-[1.02] transition-opacity duration-700 ${
-          isVideoLoaded ? "opacity-0" : "opacity-100"
+        className={`absolute inset-0 w-full h-full object-cover object-center transform-gpu scale-[1.01] transition-opacity duration-700 ${
+          isVideoLoaded ? "opacity-0" : "opacity-80"
         }`}
         loading="eager"
       />
 
-      {/* Looping background video — full opacity, let scrim handle legibility */}
+      {/* Looping background video — clearly visible and vibrant */}
       <video
         ref={videoRef}
         autoPlay
@@ -61,26 +61,22 @@ export function AmbientBackground() {
         preload="auto"
         poster="/bg-video-poster.jpg"
         onLoadedData={() => setIsVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover object-center transform-gpu scale-[1.02] transition-opacity duration-1000 ease-out ${
-          isVideoLoaded ? "opacity-100" : "opacity-0"
+        className={`absolute inset-0 w-full h-full object-cover object-center transform-gpu scale-[1.01] transition-opacity duration-1000 ease-out ${
+          isVideoLoaded ? "opacity-80" : "opacity-0"
         }`}
         disablePictureInPicture
       >
         <source src="/bg-video.mp4" type="video/mp4" />
       </video>
 
-      {/*
-        Legibility scrim — light enough to keep the video visible
-        while making white text/content fully readable on top.
-        Top is lightest (where navbar sits), rest is translucent.
-      */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/40 to-[#fbfbfd]/60" />
+      {/* Light aesthetic scrim — keeps video clearly visible while maintaining page cohesion */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/45 via-white/30 to-[#fbfbfd]/55" />
 
-      {/* Subtle bottom-fade so footer transitions cleanly */}
+      {/* Subtle bottom fade so footer transitions cleanly */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#fbfbfd] to-transparent" />
 
-      {/* iOS ambient light orbs — layered on top of video for depth */}
-      <div className="ios-ambient-layer opacity-60">
+      {/* iOS ambient light orbs */}
+      <div className="ios-ambient-layer opacity-30">
         <div className="ios-orb-1" />
         <div className="ios-orb-2" />
         <div className="ios-orb-3" />

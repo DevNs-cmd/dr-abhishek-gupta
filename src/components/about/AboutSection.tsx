@@ -1,24 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, BookOpen, Cpu, GraduationCap, Wrench } from "lucide-react";
+import { Users, BookOpen, Cpu, GraduationCap, Wrench, Briefcase, Award, ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
 import type { Professor } from "@/lib/types";
 
 interface AboutSectionProps {
   professor: Professor;
 }
-
-const roleIcons: Record<string, React.ElementType> = {
-  "Placement Head": Briefcase,
-  "HOD Edu Dept.": BookOpen,
-  "Academic Counsellor (IGNOU)": GraduationCap,
-  "Technical Consultant": Cpu,
-  "Advisor": Wrench,
-  "Academician": Users,
-  "Coordinator": Users,
-};
-
-import { Briefcase } from "lucide-react";
 
 const rolesDisplay = [
   {
@@ -192,21 +180,133 @@ export function AboutSection({ professor }: AboutSectionProps) {
               ))}
             </div>
 
-            {/* Affiliation stamp */}
-            <div className="mt-6 pt-5 border-t border-zinc-100">
-              <div className="flex items-center gap-3 bg-zinc-50 rounded-xl p-3.5 border border-dashed border-zinc-200">
-                <GraduationCap size={20} className="text-indigo-600 flex-shrink-0" />
+            {/* Verified Education & Affiliation stamps */}
+            <div className="mt-6 pt-5 border-t border-zinc-100 space-y-3">
+              <div className="flex items-start gap-3 bg-zinc-50 rounded-xl p-3 border border-zinc-200/80">
+                <GraduationCap size={18} className="text-indigo-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-zinc-900 text-[0.85rem] leading-tight">
-                    New Delhi Institute of Management
+                  <p className="font-bold text-zinc-900 text-[0.82rem] leading-tight">
+                    M.Tech (CSE) &bull; Arni University
                   </p>
-                  <p className="text-zinc-500 text-[0.75rem]">Primary Academic Affiliation</p>
+                  <p className="text-zinc-500 text-[0.72rem] mt-0.5">
+                    MCA (CS) &bull; Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                  </p>
                 </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-200/70 text-[0.75rem]">
+                <span className="font-semibold text-emerald-900 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                  ORCID: 0009-0000-9701-246X
+                </span>
+                <a
+                  href="https://orcid.org/0009-0000-9701-246X"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-emerald-700 hover:text-emerald-900 hover:underline"
+                >
+                  Verify ↗
+                </a>
               </div>
             </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Editorial Board, Peer Review & Academic Recognitions */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 ios-glass-card rounded-[28px] p-6 sm:p-8 shadow-md"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-black/[0.06]">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600">
+                <Award size={18} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-zinc-900 leading-tight">
+                  Editorial Leadership & Scholarly Service
+                </h3>
+                <p className="text-xs text-zinc-500">
+                  Global journal editorial boards, IEEE peer review, and governmental certifications
+                </p>
+              </div>
+            </div>
+            <span className="self-start sm:self-auto text-[0.7rem] font-bold text-amber-800 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1">
+              Scopus & Web of Science Indexed
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Elsevier Editorial Board */}
+            <div className="p-4 rounded-2xl bg-white/60 border border-white/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-500" />
+                  <span className="text-[0.7rem] font-bold text-amber-700 uppercase tracking-wider">
+                    Editorial Board Member
+                  </span>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-[0.92rem] leading-snug">
+                  Results in Engineering
+                </h4>
+                <p className="text-xs text-zinc-600 mt-1">
+                  Elsevier &bull; ScienceDirect platform
+                </p>
+              </div>
+              <div className="mt-3 pt-3 border-t border-black/[0.04] flex flex-wrap gap-1.5 text-[0.68rem] font-medium text-zinc-500">
+                <span className="bg-zinc-100 px-2 py-0.5 rounded-full">Scopus Indexed</span>
+                <span className="bg-zinc-100 px-2 py-0.5 rounded-full">Web of Science</span>
+              </div>
+            </div>
+
+            {/* Innovation Ambassador */}
+            <div className="p-4 rounded-2xl bg-white/60 border border-white/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="text-[0.7rem] font-bold text-emerald-700 uppercase tracking-wider">
+                    Government of India Certification
+                  </span>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-[0.92rem] leading-snug">
+                  Innovation Ambassador (IA)
+                </h4>
+                <p className="text-xs text-zinc-600 mt-1">
+                  MoE&apos;s Innovation Cell & AICTE &bull; Calendar Year 2025–26
+                </p>
+              </div>
+              <div className="mt-3 pt-3 border-t border-black/[0.04] flex flex-wrap gap-1.5 text-[0.68rem] font-medium text-zinc-500">
+                <span className="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">IIC Upskilling Certified</span>
+              </div>
+            </div>
+
+            {/* Peer Reviewer & Session Chair */}
+            <div className="p-4 rounded-2xl bg-white/60 border border-white/90 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-1">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-500" />
+                  <span className="text-[0.7rem] font-bold text-blue-700 uppercase tracking-wider">
+                    Peer Review & Conference Chair
+                  </span>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-[0.92rem] leading-snug">
+                  IEEE Conferences & Session Chair
+                </h4>
+                <p className="text-xs text-zinc-600 mt-1">
+                  Reviewer: IEEE ICCSC-2026, IEEE IC3ECSBHI-2026, ICICI-2026. Session Chair: PTEMS-2026.
+                </p>
+              </div>
+              <div className="mt-3 pt-3 border-t border-black/[0.04] flex flex-wrap gap-1.5 text-[0.68rem] font-medium text-zinc-500">
+                <span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">IEEE CIS Sponsored</span>
+                <span className="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Session Chair</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

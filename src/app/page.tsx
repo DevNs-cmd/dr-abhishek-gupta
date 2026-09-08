@@ -107,11 +107,19 @@ export default function HomePage() {
                   Peer-Reviewed Publication
                 </span>
                 <span className="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 text-xs font-medium border border-indigo-400/30 backdrop-blur-sm">
-                  {mainPublication.publisher}
+                  {mainPublication.journalOrConference ?? mainPublication.publisher}
                 </span>
                 <span className="px-3 py-1 rounded-full bg-emerald-500/30 text-emerald-200 text-xs font-medium border border-emerald-400/30 backdrop-blur-sm">
                   Scopus Indexed
                 </span>
+                <a
+                  href="https://orcid.org/0009-0000-9701-246X"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 rounded-full bg-emerald-600/30 text-emerald-100 text-xs font-medium border border-emerald-400/30 backdrop-blur-sm hover:bg-emerald-600/50 transition-colors"
+                >
+                  ORCID: 0009-0000-9701-246X ↗
+                </a>
               </div>
 
               <h2
@@ -130,16 +138,20 @@ export default function HomePage() {
                   href="/research"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-zinc-950 font-semibold text-xs sm:text-sm hover:bg-zinc-100 active:scale-95 transition-all shadow-md"
                 >
-                  View Full Research Abstract
+                  Explore All {publications.length} Research Papers
                   <ArrowRight size={14} />
                 </Link>
 
-                <Link
-                  href="/contact?subject=research-reprint"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all backdrop-blur-md border border-white/15"
-                >
-                  Request Academic Reprint
-                </Link>
+                {mainPublication.url && (
+                  <a
+                    href={mainPublication.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all backdrop-blur-md border border-white/15"
+                  >
+                    View Official DOI Paper ↗
+                  </a>
+                )}
               </div>
             </div>
           </div>

@@ -16,6 +16,26 @@ export interface Professor {
   expertise: ExpertiseDomain[];
   photo: string;
   affiliations: Affiliation[];
+  orcid?: string;
+  orcidUrl?: string;
+  education?: EducationQualification[];
+  editorialBoards?: EditorialBoard[];
+  reviewerRoles?: string[];
+  certifications?: string[];
+}
+
+export interface EditorialBoard {
+  journal: string;
+  publisher: string;
+  role: string;
+  indexedIn: string[];
+}
+
+export interface EducationQualification {
+  degree: string;
+  institution: string;
+  location?: string;
+  year?: string;
 }
 
 export interface ExpertiseDomain {
@@ -29,6 +49,7 @@ export interface Affiliation {
   institution: string;
   role: string;
   type: "primary" | "secondary";
+  period?: string;
 }
 
 // ─── Subject ─────────────────────────────────────────────────────────────────
@@ -122,6 +143,7 @@ export interface Publication {
   abstract: string;
   keywords: string[];
   publisher?: string;
+  journalOrConference?: string;
   indexedIn?: string[];
   domain: string;
   methodology?: string;
@@ -129,6 +151,10 @@ export interface Publication {
   type: PublicationType;
   status: "published" | "in-review" | "preprint";
   year?: number;
+  date?: string;
+  doi?: string;
+  url?: string;
+  issn?: string[];
   requestCopyEmail?: string;  // For verified contact later
 }
 
