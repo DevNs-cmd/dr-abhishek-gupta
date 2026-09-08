@@ -69,8 +69,9 @@ const expertiseColors: Record<string, string> = {
 export function AboutSection({ professor }: AboutSectionProps) {
   const [showMore, setShowMore] = useState(false);
 
-  const initialRoles = rolesDisplay.slice(0, 4);
-  const displayedRoles = showMore ? rolesDisplay : initialRoles;
+  // Desktop shows 4 roles; mobile hides roles beyond index 2 via CSS (hidden sm:flex)
+  const mobileInitialCount = 2;
+  const displayedRoles = showMore ? rolesDisplay : rolesDisplay.slice(0, 4);
 
   return (
     <section id="about" className="section-padding relative" aria-label="About Dr. Abhishek Gupta">
@@ -156,10 +157,17 @@ export function AboutSection({ professor }: AboutSectionProps) {
 
               {/* Roles grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 pt-5 border-t border-black/[0.06]">
-                {displayedRoles.map((role) => {
+                {displayedRoles.map((role, idx) => {
                   const Icon = role.icon;
+                  // On mobile: hide roles beyond mobileInitialCount when collapsed
+                  const hiddenOnMobile = !showMore && idx >= mobileInitialCount;
                   return (
-                    <div key={role.title} className="flex gap-3 items-start p-3 rounded-2xl bg-white/50 border border-white/80 hover:bg-white/80 transition-colors">
+                    <div
+                      key={role.title}
+                      className={`flex gap-3 items-start p-3 rounded-2xl bg-white/50 border border-white/80 hover:bg-white/80 transition-colors${
+                        hiddenOnMobile ? " hidden sm:flex" : ""
+                      }`}
+                    >
                       <div className="w-8 h-8 rounded-xl bg-indigo-50 border border-indigo-100/70 flex items-center justify-center shrink-0 mt-0.5">
                         <Icon size={15} className="text-indigo-600" />
                       </div>
@@ -183,14 +191,15 @@ export function AboutSection({ professor }: AboutSectionProps) {
             {!showMore && (
               <div className="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between">
                 <span className="text-[0.75rem] text-zinc-400 font-medium">
-                  Showing 4 of 7 leadership appointments
+                  <span className="sm:hidden">2 of 7 roles</span>
+                  <span className="hidden sm:inline">Showing 4 of 7 appointments</span>
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowMore(true)}
                   className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View All 7 Roles & Placements</span>
+                  <span>View All 7</span>
                   <ChevronDown size={13} />
                 </button>
               </div>
@@ -307,26 +316,24 @@ export function AboutSection({ professor }: AboutSectionProps) {
         </div>
 
         {/* Interactive Show More / Show Less Toggle Button */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+        <div className="flex items-center justify-center mt-8">
           <button
             type="button"
             onClick={() => setShowMore(!showMore)}
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 hover:bg-white text-zinc-900 font-semibold text-xs sm:text-sm border border-black/[0.08] shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-lg active:scale-95 transition-all duration-200 group cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/95 hover:bg-white text-zinc-900 font-semibold text-xs border border-black/[0.08] shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-lg active:scale-95 transition-all duration-200 group cursor-pointer"
             aria-expanded={showMore}
           >
-            <span>
-              {showMore
-                ? "Show Less"
-                : "Show More: Recruiter Network, Placements & Editorial Boards"}
-            </span>
             {showMore ? (
-              <ChevronUp size={16} className="text-indigo-600 group-hover:-translate-y-0.5 transition-transform" />
+              <ChevronUp size={14} className="text-indigo-600 group-hover:-translate-y-0.5 transition-transform" />
             ) : (
-              <ChevronDown size={16} className="text-indigo-600 group-hover:translate-y-0.5 transition-transform" />
+              <ChevronDown size={14} className="text-indigo-600 group-hover:translate-y-0.5 transition-transform" />
             )}
+            <span>
+              {showMore ? "Show Less" : "Show More"}
+            </span>
             {!showMore && (
-              <span className="text-[0.68rem] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold ml-1 border border-indigo-100 hidden sm:inline-block">
-                13 Recruiters &bull; Editorial Service
+              <span className="hidden sm:inline text-[0.68rem] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold border border-indigo-100">
+                Recruiters &bull; Editorial Service
               </span>
             )}
           </button>
