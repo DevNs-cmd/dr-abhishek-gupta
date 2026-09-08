@@ -68,22 +68,15 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 href="https://www.algoforceaii.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 hover:bg-white border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-200"
-                title="Powered by AlgoForce AI (www.algoforceaii.com)"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 hover:bg-white border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-200"
+                title="Powered by AlgoForce (www.algoforceaii.com)"
               >
                 <span className="text-[0.72rem] text-zinc-500 font-medium">Powered by</span>
-                <Image
-                  src="/algoforce.png"
-                  alt="AlgoForce AI"
-                  width={68}
-                  height={16}
-                  className="h-3.5 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-                <span className="text-[0.75rem] font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">
-                  AlgoForce AI
+                <span className="text-[0.82rem] font-extrabold tracking-[-0.02em] leading-none inline-flex items-center">
+                  <span className="text-[#072942]">Algo</span>
+                  <span className="text-[#9b50f7]">Force</span>
                 </span>
-                <span className="text-[0.68rem] text-zinc-400 group-hover:text-blue-600 font-medium group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                <span className="text-[0.68rem] text-zinc-400 group-hover:text-[#9b50f7] font-medium group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
                   ↗
                 </span>
               </a>

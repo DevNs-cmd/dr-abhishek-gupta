@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import { professor } from "@/lib/data/professor";
 
 const geistSans = Geist({
@@ -108,12 +109,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-[#fbfbfd] font-[family-name:var(--font-geist-sans)] relative min-h-screen">
-        {/* iOS Ambient Frosted Light Orbs */}
-        <div className="ios-ambient-layer" aria-hidden="true">
-          <div className="ios-orb-1" />
-          <div className="ios-orb-2" />
-          <div className="ios-orb-3" />
-        </div>
+        <AmbientBackground />
         <Navbar professor={professor} />
         <main id="main-content" className="relative z-10">{children}</main>
         <Footer professor={professor} />

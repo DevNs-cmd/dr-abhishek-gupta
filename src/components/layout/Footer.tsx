@@ -96,24 +96,17 @@ export function Footer({ professor }: FooterProps) {
               href="https://www.algoforceaii.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/80 hover:bg-white border border-zinc-200/90 shadow-xs hover:shadow-sm hover:border-zinc-300 transition-all duration-200"
-              title="Visit AlgoForce AI (www.algoforceaii.com)"
+              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 hover:bg-white border border-zinc-200/90 shadow-xs hover:shadow-sm hover:border-zinc-300 transition-all duration-200"
+              title="Visit AlgoForce (www.algoforceaii.com)"
             >
-              <Image
-                src="/algoforce.png"
-                alt="AlgoForce AI Logo"
-                width={80}
-                height={20}
-                className="h-4.5 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-                style={{ mixBlendMode: "multiply" }}
-              />
-              <span className="text-[0.82rem] font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">
-                AlgoForce AI
+              <span className="text-[0.88rem] font-extrabold tracking-[-0.02em] leading-none inline-flex items-center">
+                <span className="text-[#072942]">Algo</span>
+                <span className="text-[#9b50f7]">Force</span>
               </span>
-              <span className="text-[0.72rem] text-zinc-400 font-medium group-hover:text-blue-600 transition-colors hidden sm:inline">
+              <span className="text-[0.72rem] text-zinc-400 font-medium group-hover:text-[#9b50f7] transition-colors hidden sm:inline">
                 www.algoforceaii.com
               </span>
-              <span className="text-[0.7rem] text-zinc-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+              <span className="text-[0.7rem] text-zinc-400 group-hover:text-[#9b50f7] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
                 ↗
               </span>
             </a>
