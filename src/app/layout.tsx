@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Dr. Abhishek Gupta | Academician & Technology Professional",
     description:
       "Personal academic knowledge platform — notes, lectures, and research by Dr. Abhishek Gupta.",
-    images: [{ url: "/professor.jpeg", width: 1200, height: 630, alt: "Dr. Abhishek Gupta" }],
+    images: [{ url: "/abhishek-gupta-neww.jpeg", width: 1200, height: 630, alt: "Dr. Abhishek Gupta" }],
   },
   twitter: {
     card: "summary_large_image",
