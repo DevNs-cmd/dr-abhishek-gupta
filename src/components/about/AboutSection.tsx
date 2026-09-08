@@ -11,32 +11,44 @@ interface AboutSectionProps {
 
 const rolesDisplay = [
   {
-    title: "Placement Head (NDIM - BBA & BCA)",
+    title: "Placement Head",
+    subtitle: "New Delhi Institute of Management (NDIM)",
     desc: "Leading campus placement drives with premier corporate recruiters including Teleperformance, Paytm, Grant Thornton, Eternal Zomato, Concentrix, and Muthoot Finance.",
     icon: Briefcase,
   },
   {
+    title: "Academician",
+    subtitle: "Higher Education & Pedagogical Leadership",
+    desc: "Delivering pedagogy across Operating Systems, Data Science, DBMS, and Python; author of peer-reviewed Scopus & IEEE research.",
+    icon: BookOpen,
+  },
+  {
     title: "Academic Counsellor (IGNOU)",
-    desc: "Providing structured academic guidance, evaluation, and counseling for distance and open university learners.",
+    subtitle: "Indira Gandhi National Open University",
+    desc: "Providing structured academic guidance, counseling, and evaluation for university distance learners.",
     icon: GraduationCap,
   },
   {
     title: "Technical Consultant (Amar Ekta News)",
+    subtitle: "Amar Ekta News",
     desc: "Consulting on modern digital newsroom publishing, cyber hygiene, and media tech architecture.",
     icon: Cpu,
   },
   {
     title: "Advisor (DPIMS Medical College)",
+    subtitle: "DPIMS Medical College",
     desc: "Advising on institutional computing systems, educational technology, and biomedical informatics.",
     icon: ShieldCheck,
   },
   {
-    title: "HOD Education Department (Sanjivni Samaj Kalyan Foundation)",
+    title: "HOD Edu Dept (Sanjivni Samaj Kalyan Foundation)",
+    subtitle: "Sanjivni Samaj Kalyan Foundation",
     desc: "Directing foundational education outreach, youth skill development, and community learning programs.",
-    icon: BookOpen,
+    icon: Award,
   },
   {
     title: "Coordinator (RNS Charitable Society)",
+    subtitle: "RNS Charitable Society",
     desc: "Coordinating student educational welfare, scholarship facilitation, and youth empowerment initiatives.",
     icon: Users,
   },
@@ -81,6 +93,11 @@ export function AboutSection({ professor }: AboutSectionProps) {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-950 tracking-tight mb-3">
             About Dr. Abhishek Gupta
           </h2>
+          <div className="max-w-4xl mx-auto mb-4">
+            <p className="text-xs sm:text-[0.82rem] font-semibold text-indigo-900 bg-indigo-50/85 border border-indigo-200/80 rounded-2xl px-4 py-2.5 shadow-xs leading-relaxed text-center">
+              Placement Head &bull; Academician &bull; Academic Counsellor (IGNOU) &bull; Technical Consultant (Amar Ekta News) &bull; Advisor (DPIMS Medical College) &bull; HOD Edu Dept (Sanjivni Samaj Kalyan Foundation) &bull; Coordinator (RNS Charitable Society)
+            </p>
+          </div>
           <p className="text-base sm:text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed">
             Bridging deep computational science, higher education pedagogy, and career placement mentorship.
           </p>
@@ -98,46 +115,53 @@ export function AboutSection({ professor }: AboutSectionProps) {
           >
             <span className="inline-flex items-center gap-1.5 text-[0.72rem] font-bold text-indigo-700 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-3 py-1 mb-5">
               <Users size={12} />
-              Academic Profile
+              Academic & Leadership Profile
             </span>
 
             <h3 className="text-2xl font-bold text-zinc-900 tracking-tight mb-4">
-              Educator, Mentor, and Technology Strategist
+              Educator, Placement Leader, and Technology Strategist
             </h3>
 
             <div className="space-y-4 text-zinc-600 text-[0.93rem] leading-relaxed">
               <p>
                 <strong className="text-zinc-900">Dr. Abhishek Gupta</strong> is an esteemed
-                academician associated with the{" "}
-                <strong className="text-zinc-900">New Delhi Institute of Management</strong>.
+                academician, placement head, and educational leader associated with the{" "}
+                <strong className="text-zinc-900">New Delhi Institute of Management (NDIM)</strong>.
                 Throughout his academic career, he has seamlessly integrated core theoretical
-                disciplines with applied modern software development.
+                disciplines with applied modern software development and career outcomes.
               </p>
               <p>
-                Serving as <strong className="text-zinc-900">Placement Head</strong>,{" "}
-                <strong className="text-zinc-900">Head of the Education Department</strong>, and{" "}
-                <strong className="text-zinc-900">Academic Coordinator</strong>, Dr. Gupta actively
-                prepares students for the technological demands of today&apos;s digital industries.
-                As <strong className="text-zinc-900">Academic Counsellor with IGNOU</strong> and{" "}
-                <strong className="text-zinc-900">Technical Consultant & Advisor</strong>, he guides
-                learners through curriculum progression, foundational research, and career navigation.
+                Serving across distinguished institutional leadership capacities as{" "}
+                <strong className="text-zinc-900">Placement Head</strong>,{" "}
+                <strong className="text-zinc-900">Academician</strong>,{" "}
+                <strong className="text-zinc-900">Academic Counsellor (IGNOU)</strong>,{" "}
+                <strong className="text-zinc-900">Technical Consultant (Amar Ekta News)</strong>,{" "}
+                <strong className="text-zinc-900">Advisor (DPIMS Medical College)</strong>,{" "}
+                <strong className="text-zinc-900">HOD Edu Dept (Sanjivni Samaj Kalyan Foundation)</strong>, and{" "}
+                <strong className="text-zinc-900">Coordinator (RNS Charitable Society)</strong>,{" "}
+                Dr. Gupta actively prepares students for the technological demands of today&apos;s digital industries while driving impactful Scopus & IEEE indexed research.
               </p>
             </div>
 
             {/* Roles grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-black/[0.06]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8 pt-6 border-t border-black/[0.06]">
               {rolesDisplay.map((role) => {
                 const Icon = role.icon;
                 return (
-                  <div key={role.title} className="flex gap-3 items-start p-2.5 rounded-2xl bg-white/50 border border-white/80">
+                  <div key={role.title} className="flex gap-3 items-start p-3 rounded-2xl bg-white/50 border border-white/80 hover:bg-white/80 transition-colors">
                     <div className="w-8 h-8 rounded-xl bg-indigo-50 border border-indigo-100/70 flex items-center justify-center shrink-0 mt-0.5">
                       <Icon size={15} className="text-indigo-600" />
                     </div>
                     <div>
-                      <p className="font-bold text-zinc-900 text-[0.82rem] leading-tight mb-1">
+                      <p className="font-bold text-zinc-900 text-[0.82rem] leading-tight mb-0.5">
                         {role.title}
                       </p>
-                      <p className="text-zinc-500 text-[0.75rem] leading-snug">{role.desc}</p>
+                      {role.subtitle && (
+                        <p className="text-[0.7rem] font-semibold text-indigo-600 mb-1">
+                          {role.subtitle}
+                        </p>
+                      )}
+                      <p className="text-zinc-500 text-[0.74rem] leading-snug">{role.desc}</p>
                     </div>
                   </div>
                 );

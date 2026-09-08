@@ -3,16 +3,16 @@ import type { Professor } from "@/lib/types";
 export const professor: Professor = {
   id: "abhishek-gupta",
   name: "Dr. Abhishek Gupta",
-  title: "Placement Head, Academician & Technical Consultant",
+  title:
+    "Placement Head, Academician, Academic Counsellor (IGNOU), Technical Consultant (Amar Ekta News), Advisor (DPIMS Medical College), HOD Edu Dept (Sanjivni Samaj Kalyan Foundation), Coordinator (RNS Charitable Society)",
   roles: [
-    "Placement Head (NDIM)",
-    "Academician & Assistant Professor",
+    "Placement Head",
+    "Academician",
     "Academic Counsellor (IGNOU)",
     "Technical Consultant (Amar Ekta News)",
     "Advisor (DPIMS Medical College)",
-    "HOD Edu Dept. (Sanjivni Samaj Kalyan Foundation)",
+    "HOD Edu Dept (Sanjivni Samaj Kalyan Foundation)",
     "Coordinator (RNS Charitable Society)",
-    "Research Scholar (KR Mangalam University)",
   ],
   institution: "New Delhi Institute of Management (NDIM)",
   orcid: "0009-0000-9701-246X",
@@ -22,7 +22,7 @@ export const professor: Professor = {
   followersCount: "1,700+",
   bio: "Dr. Abhishek Kumar Gupta is an esteemed academician, educational leader, and technology consultant with extensive contributions across computer science pedagogy, industry campus placements, and applied engineering. Associated with premier institutions including New Delhi Institute of Management (NDIM - BBA & BCA), KR Mangalam University (Research Scholar in SOET), and JIMS Vasant Kunj (former Assistant Professor of IT), he integrates computational theory with modern distributed systems, cybersecurity, and artificial intelligence. Serving as Placement Head at NDIM, Head of the Education Department at Sanjivni Samaj Kalyan Foundation, IGNOU Academic Counsellor, and Technical Consultant to Amar Ekta News and DPIMS Medical College, Dr. Gupta empowers future technologists through rigorous mentorship, national placement drives, and impactful peer-reviewed research indexed in IEEE Xplore, Springer Nature, and Scopus.",
   shortBio:
-    "Placement Head at NDIM, Academician, and Researcher (ORCID: 0009-0000-9701-246X). Author of Scopus & IEEE indexed research in AI in Healthcare, Cyber Threat Detection, and Cloud-Fog Architectures.",
+    "Placement Head, Academician, Academic Counsellor (IGNOU), Technical Consultant (Amar Ekta News), Advisor (DPIMS Medical College), HOD Edu Dept (Sanjivni Samaj Kalyan Foundation), Coordinator (RNS Charitable Society).",
   photo: "/professor.jpeg",
   education: [
     {

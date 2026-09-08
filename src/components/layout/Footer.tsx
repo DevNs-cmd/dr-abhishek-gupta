@@ -50,7 +50,7 @@ export function Footer({ professor }: FooterProps) {
               <div>
                 <p className="font-bold text-zinc-900 text-[1rem] tracking-tight">{professor.name}</p>
                 <p className="text-[0.72rem] text-indigo-600 font-semibold tracking-wide">
-                  Academic &bull; Technology &bull; Learning
+                  Placement Head &bull; Academician &bull; Consultant
                 </p>
               </div>
             </div>
