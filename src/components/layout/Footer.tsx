@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
 import type { Professor } from "@/lib/types";
 
 interface FooterProps {
@@ -70,6 +71,26 @@ export function Footer({ professor }: FooterProps) {
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                 ORCID: 0009-0000-9701-246X ↗
+              </a>
+              <a
+                href={professor.youtubeUrl ?? "https://www.youtube.com/@CodecraftGen"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200/80 px-2.5 py-0.5 rounded-full transition-colors"
+                title="Dr. Abhishek Gupta YouTube Channel"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 text-red-600" />
+                @CodecraftGen ↗
+              </a>
+              <a
+                href={professor.linkedInUrl ?? "https://www.linkedin.com/in/dr-abhishek-gupta-80620720/"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200/80 px-2.5 py-0.5 rounded-full transition-colors"
+                title="Dr. Abhishek Gupta LinkedIn Profile"
+              >
+                <LinkedInIcon className="w-3.5 h-3.5 text-blue-600" />
+                LinkedIn ↗
               </a>
             </div>
           </div>

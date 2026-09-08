@@ -17,6 +17,8 @@ export const professor: Professor = {
   institution: "New Delhi Institute of Management",
   orcid: "0009-0000-9701-246X",
   orcidUrl: "https://orcid.org/0009-0000-9701-246X",
+  youtubeUrl: "https://www.youtube.com/@CodecraftGen",
+  linkedInUrl: "https://www.linkedin.com/in/dr-abhishek-gupta-80620720/",
   bio: "Dr. Abhishek Kumar Gupta is an esteemed academician, researcher, and educational leader with extensive contributions to computer science education and applied engineering. Associated with premier institutions including New Delhi Institute of Management, KR Mangalam University (Research Scholar), and JIMS Vasant Kunj (former Assistant Professor of IT), he integrates core computational theory with real-time distributed systems, cyber security, and artificial intelligence. Serving as Placement Head, Head of Education Department, and IGNOU Academic Counsellor, Dr. Gupta empowers future technologists through rigorous pedagogy and impactful research indexed in IEEE Xplore and Scopus.",
   shortBio:
     "Dedicated educator, researcher (ORCID: 0009-0000-9701-246X), and technology consultant. Author of peer-reviewed research in Cloud-Fog architectures, AI in healthcare, and cyber security.",

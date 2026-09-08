@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Users, BookOpen, Cpu, GraduationCap, Wrench, Briefcase, Award, ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
+import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
 import type { Professor } from "@/lib/types";
 
 interface AboutSectionProps {
@@ -206,6 +207,36 @@ export function AboutSection({ professor }: AboutSectionProps) {
                   className="font-bold text-emerald-700 hover:text-emerald-900 hover:underline"
                 >
                   Verify ↗
+                </a>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-red-50/60 border border-red-200/70 text-[0.75rem]">
+                <span className="font-semibold text-red-900 flex items-center gap-1.5">
+                  <YouTubeIcon className="w-3.5 h-3.5 text-red-600" />
+                  YouTube Channel
+                </span>
+                <a
+                  href="https://www.youtube.com/@CodecraftGen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-red-700 hover:text-red-900 hover:underline"
+                >
+                  @CodecraftGen ↗
+                </a>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-blue-50/60 border border-blue-200/70 text-[0.75rem]">
+                <span className="font-semibold text-blue-900 flex items-center gap-1.5">
+                  <LinkedInIcon className="w-3.5 h-3.5 text-blue-600" />
+                  LinkedIn Profile
+                </span>
+                <a
+                  href="https://www.linkedin.com/in/dr-abhishek-gupta-80620720/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-blue-700 hover:text-blue-900 hover:underline"
+                >
+                  Dr. Abhishek Gupta ↗
                 </a>
               </div>
             </div>

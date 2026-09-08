@@ -137,14 +137,17 @@ export function getPublicationBySlug(
 // ─── Subject color map ────────────────────────────────────────────────────────
 
 export const subjectColors: Record<string, { bg: string; text: string; border: string }> = {
-  Python:    { bg: "bg-emerald-50",  text: "text-emerald-700",  border: "border-emerald-200" },
-  Django:    { bg: "bg-green-50",    text: "text-green-700",    border: "border-green-200"   },
-  DBMS:      { bg: "bg-amber-50",    text: "text-amber-700",    border: "border-amber-200"   },
-  IoT:       { bg: "bg-violet-50",   text: "text-violet-700",   border: "border-violet-200"  },
-  "C++":     { bg: "bg-red-50",      text: "text-red-700",      border: "border-red-200"     },
-  "Power BI":{ bg: "bg-yellow-50",   text: "text-yellow-700",   border: "border-yellow-200"  },
-  "Computer Science": { bg: "bg-blue-50", text: "text-blue-700", border: "border-blue-200"   },
-  Career:    { bg: "bg-slate-50",    text: "text-slate-700",    border: "border-slate-200"   },
+  OS:                 { bg: "bg-blue-50",     text: "text-blue-700",     border: "border-blue-200"    },
+  "Data Science":     { bg: "bg-purple-50",   text: "text-purple-700",   border: "border-purple-200"  },
+  "CS Fundamentals":  { bg: "bg-cyan-50",     text: "text-cyan-700",     border: "border-cyan-200"    },
+  Python:             { bg: "bg-emerald-50",  text: "text-emerald-700",  border: "border-emerald-200" },
+  Django:             { bg: "bg-green-50",    text: "text-green-700",    border: "border-green-200"   },
+  DBMS:               { bg: "bg-amber-50",    text: "text-amber-700",    border: "border-amber-200"   },
+  IoT:                { bg: "bg-violet-50",   text: "text-violet-700",   border: "border-violet-200"  },
+  "C++":              { bg: "bg-red-50",      text: "text-red-700",      border: "border-red-200"     },
+  "Power BI":         { bg: "bg-yellow-50",   text: "text-yellow-700",   border: "border-yellow-200"  },
+  "Computer Science":  { bg: "bg-blue-50",     text: "text-blue-700",     border: "border-blue-200"    },
+  Career:             { bg: "bg-slate-50",    text: "text-slate-700",    border: "border-slate-200"   },
 };
 
 export function getSubjectColors(subject: string) {

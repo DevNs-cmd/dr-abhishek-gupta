@@ -18,6 +18,9 @@ export interface Professor {
   affiliations: Affiliation[];
   orcid?: string;
   orcidUrl?: string;
+  youtubeUrl?: string;
+  linkedInUrl?: string;
+  email?: string;
   education?: EducationQualification[];
   editorialBoards?: EditorialBoard[];
   reviewerRoles?: string[];
