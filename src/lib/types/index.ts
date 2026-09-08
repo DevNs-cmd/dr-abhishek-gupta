@@ -20,11 +20,13 @@ export interface Professor {
   orcidUrl?: string;
   youtubeUrl?: string;
   linkedInUrl?: string;
+  followersCount?: string;
   email?: string;
   education?: EducationQualification[];
   editorialBoards?: EditorialBoard[];
   reviewerRoles?: string[];
   certifications?: string[];
+  placementPartners?: string[];
 }
 
 export interface EditorialBoard {

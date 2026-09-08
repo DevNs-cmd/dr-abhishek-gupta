@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, BookOpen, Cpu, GraduationCap, Wrench, Briefcase, Award, ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
+import { Users, BookOpen, Cpu, GraduationCap, Wrench, Briefcase, Award, ShieldCheck, CheckCircle2, ExternalLink, Building2, Rocket } from "lucide-react";
 import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
 import type { Professor } from "@/lib/types";
 
@@ -11,24 +11,34 @@ interface AboutSectionProps {
 
 const rolesDisplay = [
   {
-    title: "Placement Head & Career Advisor",
-    desc: "Guiding students toward technical career readiness and professional placement pathways.",
+    title: "Placement Head (NDIM - BBA & BCA)",
+    desc: "Leading campus placement drives with premier corporate recruiters including Teleperformance, Paytm, Grant Thornton, Eternal Zomato, Concentrix, and Muthoot Finance.",
     icon: Briefcase,
   },
   {
-    title: "HOD Edu Dept. & Coordinator",
-    desc: "Overseeing departmental curricula, academic execution, and pedagogical excellence.",
-    icon: BookOpen,
-  },
-  {
     title: "Academic Counsellor (IGNOU)",
-    desc: "Providing structured academic guidance and counseling for distance learners.",
+    desc: "Providing structured academic guidance, evaluation, and counseling for distance and open university learners.",
     icon: GraduationCap,
   },
   {
-    title: "Technical Consultant & Advisor",
-    desc: "Advising on institutional technology implementation, computing labs, and systems innovation.",
+    title: "Technical Consultant (Amar Ekta News)",
+    desc: "Consulting on modern digital newsroom publishing, cyber hygiene, and media tech architecture.",
     icon: Cpu,
+  },
+  {
+    title: "Advisor (DPIMS Medical College)",
+    desc: "Advising on institutional computing systems, educational technology, and biomedical informatics.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "HOD Education Department (Sanjivni Samaj Kalyan Foundation)",
+    desc: "Directing foundational education outreach, youth skill development, and community learning programs.",
+    icon: BookOpen,
+  },
+  {
+    title: "Coordinator (RNS Charitable Society)",
+    desc: "Coordinating student educational welfare, scholarship facilitation, and youth empowerment initiatives.",
+    icon: Users,
   },
 ];
 
@@ -243,6 +253,99 @@ export function AboutSection({ professor }: AboutSectionProps) {
             </div>
           </motion.div>
         </div>
+
+        {/* Campus Placement Leadership & Corporate Recruiter Network */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 ios-glass-card rounded-[28px] p-6 sm:p-8 shadow-md"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-black/[0.06]">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600">
+                <Briefcase size={18} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-zinc-900 leading-tight">
+                  Campus Placement Leadership & Corporate Connect
+                </h3>
+                <p className="text-xs text-zinc-500">
+                  Head of Placement Cell &bull; New Delhi Institute of Management (NDIM - BBA & BCA)
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[0.7rem] font-bold text-emerald-800 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1">
+                Active Placement Cell
+              </span>
+              <span className="text-[0.7rem] font-bold text-blue-800 bg-blue-500/10 border border-blue-500/20 rounded-full px-3 py-1">
+                1,700+ LinkedIn Network
+              </span>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+              As Placement Cell Head at NDIM, Dr. Abhishek Gupta actively bridges the gap between academic curricula and corporate expectations — spearheading campus recruitment drives, industry-readiness bootcamps, and institutional memorandums of understanding (MoU).
+            </p>
+
+            {/* Recruiter Brands Grid */}
+            <div className="pt-2">
+              <span className="text-[0.7rem] font-bold uppercase tracking-wider text-zinc-400 block mb-2.5">
+                Featured Campus Recruitment Partners & Placement Drives
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Teleperformance",
+                  "Paytm",
+                  "Grant Thornton",
+                  "Eternal Zomato",
+                  "Concentrix",
+                  "Kotak Life Insurance",
+                  "Pathkind Labs",
+                  "Bajaj Capital",
+                  "Muthoot Finance",
+                  "Kalve & Co Entertainment",
+                  "Symbiosis SOES (Skill MoU)",
+                  "T.I.M.E. Group (Career Partner)",
+                  "Yakult (Industrial Immersion)",
+                ].map((partner) => (
+                  <span
+                    key={partner}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-800 bg-white/80 hover:bg-white border border-zinc-200/80 px-3.5 py-1.5 rounded-full shadow-xs transition-colors"
+                  >
+                    <Building2 size={13} className="text-indigo-600" />
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Highlighted Initiatives */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
+              <div className="p-3 rounded-2xl bg-zinc-50/80 border border-zinc-100">
+                <p className="text-xs font-bold text-zinc-900 mb-0.5">Resume & Grooming</p>
+                <p className="text-[0.72rem] text-zinc-500">
+                  Structured workshops conducted in collaboration with T.I.M.E. Group.
+                </p>
+              </div>
+              <div className="p-3 rounded-2xl bg-zinc-50/80 border border-zinc-100">
+                <p className="text-xs font-bold text-zinc-900 mb-0.5">Inclusive Drives</p>
+                <p className="text-[0.72rem] text-zinc-500">
+                  Dedicated campus drives supporting female candidate placement & leadership.
+                </p>
+              </div>
+              <div className="p-3 rounded-2xl bg-zinc-50/80 border border-zinc-100">
+                <p className="text-xs font-bold text-zinc-900 mb-0.5">Experiential Learning</p>
+                <p className="text-[0.72rem] text-zinc-500">
+                  Industrial visits to real manufacturing & tech plants like Yakult.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Editorial Board, Peer Review & Academic Recognitions */}
         <motion.div

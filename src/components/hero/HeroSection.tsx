@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, BookOpen, Briefcase, Cpu, Sparkles } from "lucide-react";
+import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
 import type { Professor } from "@/lib/types";
 
 interface HeroSectionProps {
@@ -118,9 +119,9 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 transition={{ duration: 0.5, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8"
               >
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                  NDIM (BBA & BCA)
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50 backdrop-blur-md border border-emerald-200/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                  Placement Head &bull; NDIM
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
@@ -134,6 +135,26 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
                   Academic Counsellor (IGNOU)
                 </span>
+                <a
+                  href={professor.linkedInUrl ?? "https://www.linkedin.com/in/dr-abhishek-gupta-80620720/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-800 bg-blue-50 hover:bg-blue-100 backdrop-blur-md border border-blue-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
+                  title="Dr. Abhishek Gupta on LinkedIn"
+                >
+                  <LinkedInIcon className="w-3.5 h-3.5 text-blue-600" />
+                  LinkedIn 1,700+ ↗
+                </a>
+                <a
+                  href={professor.youtubeUrl ?? "https://www.youtube.com/@CodecraftGen"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-red-800 bg-red-50 hover:bg-red-100 backdrop-blur-md border border-red-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
+                  title="Dr. Abhishek Gupta on YouTube"
+                >
+                  <YouTubeIcon className="w-3.5 h-3.5 text-red-600" />
+                  @CodecraftGen ↗
+                </a>
                 <a
                   href={professor.orcidUrl ?? "https://orcid.org/0009-0000-9701-246X"}
                   target="_blank"
