@@ -102,7 +102,12 @@ export const professor: Professor = {
   ],
   certifications: [
     "Innovation Ambassador (IA) 'Upskilling' Certified (MoE's Innovation Cell & AICTE, 2025–26)",
-    "Event Coordinator: IIT Guwahati – Alcheringa 2026 (Delhi Highway to Alcher)",
-    "Resource Person: IP Awareness and Patent Filing (IIC NDIM)",
+    "Event Coordinator: IIT Guwahati – Alcheringa 2026 (Delhi Highway to Alcher Initiative)",
+    "Resource Person: IP Awareness and Patent Filing Workshop (IIC NDIM)",
+    "Seminar Speaker: Business Model Fit, IIC & Centre for Green Initiative (CGI), NDIM – March 2026",
+    "Certificate of Participation: IEEE 7th AI Symposium, University of South Dakota (June 2025)",
+    "Faculty Development Programme (FDP): Research Methodology: Basics to Advanced (IIC NDIM)",
+    "Certificate of Participation: World Meditation Day 2025 (Heartfulness – Global)",
+    "AI for Atmanirbhar Bharat Speaker: India AI Impact Summit 2026",
   ],
 };
