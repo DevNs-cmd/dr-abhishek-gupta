@@ -12,8 +12,6 @@ interface PublicationCardProps {
 export function PublicationCard({ publication }: PublicationCardProps) {
   const [copied, setCopied] = useState(false);
 
-  const publicationVenue = publication.journalOrConference || publication.publisher || "Academic Publication";
-
   const apaCitation = `${publication.authors.join(", ")} (${publication.year || "2025"}). "${publication.title}." ${
     publication.journalOrConference ? `${publication.journalOrConference}, ` : ""
   }${publication.publisher ? `${publication.publisher}. ` : ""}${

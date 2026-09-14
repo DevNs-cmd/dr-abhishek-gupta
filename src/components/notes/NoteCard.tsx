@@ -8,7 +8,7 @@ interface NoteCardProps {
   compact?: boolean;
 }
 
-export function NoteCard({ note, compact = false }: NoteCardProps) {
+export function NoteCard({ note }: NoteCardProps) {
   const colors = getSubjectColors(note.subject);
 
   return (
@@ -25,8 +25,9 @@ export function NoteCard({ note, compact = false }: NoteCardProps) {
           >
             {note.subject}
           </span>
-          <span className="text-[0.7rem] font-medium text-zinc-500 bg-black/[0.03] border border-black/[0.04] rounded-full px-2.5 py-1">
-            {note.fileType}
+          <span className="text-[0.7rem] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 rounded-full px-2.5 py-1 inline-flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+            PDF Notes
           </span>
         </div>
         <div className="w-9 h-9 rounded-2xl bg-white/80 border border-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-colors">

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, BookOpen, Briefcase, Cpu, Sparkles } from "lucide-react";
+import { ArrowRight, Play, BookOpen, Briefcase, Cpu } from "lucide-react";
 import { YouTubeIcon, LinkedInIcon } from "@/components/common/SocialIcons";
 import type { Professor } from "@/lib/types";
 
@@ -54,34 +54,17 @@ export function HeroSection({ professor }: HeroSectionProps) {
           {/* Left Column: Text & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
             <div className="ios-glass-card rounded-[36px] p-6 sm:p-9 lg:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-white/95 bg-white/85 backdrop-blur-2xl">
-              {/* Eyebrow & Platform Partner Badges */}
+              {/* Eyebrow Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-6"
+                className="flex items-center justify-center lg:justify-start mb-6"
               >
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full ios-glass-pill text-[0.75rem] font-semibold tracking-wider text-indigo-700 uppercase">
                   <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
                   Academic &bull; Technology &bull; Learning
                 </div>
-
-                <a
-                  href="https://www.algoforceaii.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 hover:bg-white border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-200"
-                  title="Powered by AlgoForce (www.algoforceaii.com)"
-                >
-                  <span className="text-[0.72rem] text-zinc-500 font-medium">Powered by</span>
-                  <span className="text-[0.82rem] font-extrabold tracking-[-0.02em] leading-none inline-flex items-center">
-                    <span className="text-[#072942]">Algo</span>
-                    <span className="text-[#9b50f7]">Force</span>
-                  </span>
-                  <span className="text-[0.68rem] text-zinc-400 group-hover:text-[#9b50f7] font-medium group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
-                    ↗
-                  </span>
-                </a>
               </motion.div>
 
               {/* Headline */}
@@ -223,10 +206,10 @@ export function HeroSection({ professor }: HeroSectionProps) {
               >
                 {/* Luminous Glow behind portrait */}
                 <div
-                  className="absolute -inset-2 rounded-[36px] pointer-events-none opacity-75"
+                  className="absolute -inset-2 rounded-[36px] pointer-events-none opacity-80"
                   style={{
-                    background: "radial-gradient(ellipse at center, rgba(165, 180, 252, 0.45) 0%, rgba(199, 210, 254, 0.2) 50%, transparent 70%)",
-                    filter: "blur(32px)",
+                    background:
+                      "radial-gradient(ellipse at center, rgba(165, 180, 252, 0.5) 0%, rgba(199, 210, 254, 0.25) 45%, rgba(199, 210, 254, 0.08) 70%, transparent 100%)",
                   }}
                   aria-hidden="true"
                 />

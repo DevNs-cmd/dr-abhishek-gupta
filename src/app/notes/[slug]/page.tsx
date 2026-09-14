@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, ArrowLeft, Clock, FileText, BookOpen } from "lucide-react";
+import { ChevronRight, ArrowLeft, Clock, FileText } from "lucide-react";
 import { NoteDetailReader } from "@/components/notes/NoteDetailReader";
 import { NoteCard } from "@/components/notes/NoteCard";
 import { notes } from "@/lib/data/notes";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, ArrowLeft, Clock, BookOpen, Share2, Tag, Play } from "lucide-react";
+import { ChevronRight, ArrowLeft, Clock, BookOpen, Tag } from "lucide-react";
 import { YouTubePlayer } from "@/components/lectures/YouTubePlayer";
 import { LectureCard } from "@/components/lectures/LectureCard";
 import { NoteCard } from "@/components/notes/NoteCard";

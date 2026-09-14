@@ -55,6 +55,7 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── Focus Styles ── */
@@ -67,8 +68,8 @@ body {
 /* ── iOS Frosted Glass Utilities ── */
 .ios-glass {
   background: rgba(255, 255, 255, 0.90);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
     0 12px 32px -4px rgba(0, 0, 0, 0.06),
@@ -77,8 +78,8 @@ body {
 
 .ios-glass-card {
   background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(32px) saturate(190%);
-  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
     0 14px 36px -8px rgba(0, 0, 0, 0.06),
@@ -99,8 +100,8 @@ body {
 
 .ios-glass-pill {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px) saturate(190%);
-  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
   border: 1px solid rgba(255, 255, 255, 0.90);
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.05),
@@ -110,8 +111,8 @@ body {
 /* ── iOS Segmented Control ── */
 .ios-segmented {
   background: rgba(118, 118, 128, 0.12);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
   border-radius: 9999px;
   padding: 3px;
   display: inline-flex;
@@ -137,6 +138,7 @@ body {
 }
 
 /* ── Ambient Background Mesh (Fixed behind whole app) ── */
+/* Uses multi-stop radial gradients to fade seamlessly without expensive filter: blur() GPU memory penalties */
 .ios-ambient-layer {
   position: fixed;
   top: 0;
@@ -146,39 +148,68 @@ body {
   pointer-events: none;
   z-index: -1;
   overflow: hidden;
+  contain: strict;
 }
 
 .ios-orb-1 {
   position: absolute;
-  top: -15%;
-  right: -10%;
+  top: -10%;
+  right: -5%;
   width: 750px;
   height: 750px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(224, 231, 255, 0.65) 0%, rgba(243, 232, 255, 0.3) 45%, transparent 70%);
-  filter: blur(60px);
+  background: radial-gradient(circle closest-side, rgba(224, 231, 255, 0.8) 0%, rgba(243, 232, 255, 0.45) 45%, rgba(243, 232, 255, 0.15) 75%, transparent 100%);
+  pointer-events: none;
 }
 
 .ios-orb-2 {
   position: absolute;
   top: 35%;
-  left: -15%;
+  left: -10%;
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(219, 234, 254, 0.55) 0%, rgba(240, 249, 255, 0.3) 50%, transparent 70%);
-  filter: blur(65px);
+  background: radial-gradient(circle closest-side, rgba(219, 234, 254, 0.75) 0%, rgba(240, 249, 255, 0.4) 50%, rgba(240, 249, 255, 0.15) 80%, transparent 100%);
+  pointer-events: none;
 }
 
 .ios-orb-3 {
   position: absolute;
-  bottom: -10%;
-  right: 15%;
+  bottom: -5%;
+  right: 10%;
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(254, 243, 199, 0.35) 0%, rgba(254, 226, 226, 0.2) 45%, transparent 70%);
-  filter: blur(70px);
+  background: radial-gradient(circle closest-side, rgba(254, 243, 199, 0.5) 0%, rgba(254, 226, 226, 0.3) 45%, rgba(254, 226, 226, 0.1) 75%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ── iOS WebKit Hardware Optimizations ── */
+/* Strictly prevents WebKit GPU memory ceiling exhaustion on iPhones & iPads */
+@supports (-webkit-touch-callout: none) {
+  .ios-glass {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
+  }
+
+  .ios-glass-card {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
+  }
+
+  .ios-glass-card:hover {
+    transform: none;
+  }
+
+  .ios-glass-pill {
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 /* ── Custom Scrollbars ── */

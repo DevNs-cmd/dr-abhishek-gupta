@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Building, GraduationCap, Briefcase, HelpCircle, CheckCircle } from "lucide-react";
+import { Mail, Building, GraduationCap, HelpCircle, CheckCircle } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {

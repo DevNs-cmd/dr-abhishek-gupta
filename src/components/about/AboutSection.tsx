@@ -81,8 +81,8 @@ export function AboutSection({ professor }: AboutSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-10 sm:mb-12"
         >
           <span className="text-[0.72rem] font-bold tracking-[0.15em] text-indigo-700 uppercase mb-2.5 inline-block px-3 py-1 rounded-full ios-glass-pill">
@@ -108,8 +108,8 @@ export function AboutSection({ professor }: AboutSectionProps) {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between"
           >
             <div>
@@ -210,8 +210,8 @@ export function AboutSection({ professor }: AboutSectionProps) {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-2 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between"
           >
             <div>
@@ -343,11 +343,11 @@ export function AboutSection({ professor }: AboutSectionProps) {
         <AnimatePresence>
           {showMore && (
             <motion.div
-              initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: "auto", y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -10 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-8 mt-8 overflow-hidden"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-8 mt-8"
             >
               {/* Campus Placement Leadership & Corporate Recruiter Network */}
               <div className="ios-glass-card rounded-[28px] p-6 sm:p-8 shadow-md">

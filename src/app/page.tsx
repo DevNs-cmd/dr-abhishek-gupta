@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Video, Award, GraduationCap, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BookOpen, Video, Award, GraduationCap, CheckCircle2 } from "lucide-react";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { AboutSection } from "@/components/about/AboutSection";
 import { NoteCard } from "@/components/notes/NoteCard";
@@ -97,8 +97,20 @@ export default function HomePage() {
         <section className="max-w-[1200px] mx-auto px-4 sm:px-6" aria-labelledby="research-spotlight-heading">
           <div className="relative rounded-[32px] bg-gradient-to-br from-[#1d1d1f] via-zinc-900 to-indigo-950 text-white p-8 md:p-12 overflow-hidden shadow-2xl border border-white/10">
             {/* Ambient Background Glow */}
-            <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />
-            <div className="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-blue-500/15 blur-3xl pointer-events-none" />
+            <div
+              className="absolute -right-20 -top-20 w-96 h-96 rounded-full pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(99,102,241,0.08) 45%, transparent 70%)",
+              }}
+            />
+            <div
+              className="absolute -left-20 -bottom-20 w-96 h-96 rounded-full pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0.06) 45%, transparent 70%)",
+              }}
+            />
 
             <div className="relative z-10 max-w-3xl">
               <div className="flex flex-wrap items-center gap-2 mb-5">

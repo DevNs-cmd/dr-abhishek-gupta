@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import {
-  FileText,
   ListChecks,
   BookmarkCheck,
   Download,
   Share2,
   Check,
   BookOpen,
-  ArrowRight,
   Sparkles,
 } from "lucide-react";
 import type { Note } from "@/lib/types";
@@ -26,10 +24,6 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
     navigator.clipboard.writeText(window.location.href);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleDownload = () => {
-    alert(`Downloading academic document: "${note.title} (${note.fileType})"`);
   };
 
   return (
@@ -89,13 +83,17 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
             )}
           </button>
 
-          <button
-            onClick={handleDownload}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#1d1d1f] hover:bg-black px-4 py-1.5 rounded-full shadow-md active:scale-95 transition-all"
+          <a
+            href={note.fileUrl || `/notes/${note.slug}.pdf`}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#1d1d1f] hover:bg-black px-4 py-1.5 rounded-full shadow-md active:scale-95 transition-all cursor-pointer"
+            title={`Download ${note.title} as PDF`}
           >
             <Download size={13} />
-            Download {note.fileType}
-          </button>
+            <span>Download {note.fileType}</span>
+          </a>
         </div>
       </div>
 
@@ -109,9 +107,29 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
               <h3 className="text-[0.72rem] font-bold uppercase tracking-wider text-zinc-400 mb-2">
                 Curriculum Topic Summary
               </h3>
-              <p className="text-zinc-800 text-base leading-relaxed">
+              <p className="text-zinc-800 text-base leading-relaxed mb-4">
                 {note.description}
               </p>
+
+              {/* Direct PDF Download Action Banner */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-3 border-t border-black/[0.05]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-xs font-semibold text-zinc-700">
+                    Official PDF Courseware Ready for Download
+                  </span>
+                </div>
+                <a
+                  href={note.fileUrl || `/notes/${note.slug}.pdf`}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-full shadow-sm active:scale-95 transition-all"
+                >
+                  <Download size={13} />
+                  <span>Download Complete PDF</span>
+                </a>
+              </div>
             </div>
 
             {/* Core Body Content */}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Award, BookOpen, CheckCircle2, ExternalLink, ShieldCheck, Cpu, Cloud, Activity } from "lucide-react";
+import { Award, CheckCircle2, ExternalLink, ShieldCheck, Cpu, Cloud, Activity } from "lucide-react";
 import { PublicationCard } from "@/components/research/PublicationCard";
 import { publications } from "@/lib/data/research";
 import { professor } from "@/lib/data/professor";
