@@ -45,7 +45,7 @@ const expertiseTags = [
 export function HeroSection({ professor }: HeroSectionProps) {
   return (
     <section
-      className="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden"
+      className="relative lg:min-h-[88vh] flex items-center pt-24 sm:pt-28 pb-4 sm:pb-8 lg:pb-12 overflow-hidden"
       aria-label="Introduction"
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full">
@@ -109,10 +109,6 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                   Editorial Board &bull; Results in Engineering (Elsevier)
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
-                  Research Scholar (KR Mangalam Univ.)
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
@@ -194,8 +190,8 @@ export function HeroSection({ professor }: HeroSectionProps) {
           </div>
 
           {/* Right Column: iOS Frosted Portrait & Floating Cards (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center items-center relative mt-6 lg:mt-0">
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px]">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-6 lg:mt-0 w-full">
+            <div className="relative w-full max-w-[240px] xs:max-w-[270px] sm:max-w-[380px] lg:max-w-[420px] mx-auto">
 
               {/* Portrait Container */}
               <motion.div
@@ -215,18 +211,18 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 />
 
                 {/* Squircle Glass Frame */}
-                <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden border border-white/90 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.12),_0_4px_16px_rgba(0,0,0,0.04)] bg-white/40 backdrop-blur-sm">
+                <div className="relative aspect-[4/5] rounded-[28px] sm:rounded-[32px] overflow-hidden border border-white/90 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.12),_0_4px_16px_rgba(0,0,0,0.04)] bg-white/60">
                   <Image
                     src={professor.photo}
                     alt={`${professor.name} — Academician and Placement Head at New Delhi Institute of Management`}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 768px) 90vw, 420px"
+                    sizes="(max-width: 640px) 270px, (max-width: 1024px) 380px, 420px"
                     priority
                   />
                   {/* Subtle rim vignette */}
                   <div
-                    className="absolute inset-0 pointer-events-none border border-white/40 rounded-[32px]"
+                    className="absolute inset-0 pointer-events-none border border-white/40 rounded-[28px] sm:rounded-[32px]"
                     aria-hidden="true"
                   />
                 </div>
@@ -257,32 +253,31 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   </motion.div>
                 );
               })}
+            </div>
 
-              {/* Mobile Glass Cards (stacked gracefully under portrait without clipping) */}
-              <div className="grid grid-cols-1 gap-2.5 sm:hidden mt-5 w-full">
-                {floatingCards.map((card) => {
-                  const Icon = card.icon;
-                  return (
-                    <div
-                      key={card.title}
-                      className="ios-glass-card rounded-2xl px-4 py-2.5 flex items-center gap-3 shadow-sm bg-white/90"
-                    >
-                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${card.color}`}>
-                        <Icon size={16} />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-[0.82rem] font-bold text-zinc-900 leading-tight">
-                          {card.title}
-                        </p>
-                        <p className="text-[0.72rem] text-zinc-500 leading-tight font-medium">
-                          {card.subtitle}
-                        </p>
-                      </div>
+            {/* Mobile Glass Cards (stacked gracefully under portrait without clipping) */}
+            <div className="grid grid-cols-1 gap-2.5 sm:hidden mt-5 w-full max-w-[340px] mx-auto">
+              {floatingCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <div
+                    key={card.title}
+                    className="ios-glass-card rounded-2xl px-4 py-2.5 flex items-center gap-3 shadow-sm bg-white/90"
+                  >
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${card.color}`}>
+                      <Icon size={16} />
                     </div>
-                  );
-                })}
-              </div>
-
+                    <div className="text-left">
+                      <p className="text-[0.82rem] font-bold text-zinc-900 leading-tight">
+                        {card.title}
+                      </p>
+                      <p className="text-[0.72rem] text-zinc-500 leading-tight font-medium">
+                        {card.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

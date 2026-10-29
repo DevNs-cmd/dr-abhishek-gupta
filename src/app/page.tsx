@@ -15,7 +15,7 @@ export default function HomePage() {
   const mainPublication = publications[0];
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-12 sm:space-y-16 md:space-y-20 pb-20">
       {/* Hero Section */}
       <HeroSection professor={professor} />
 
