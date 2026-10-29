@@ -32,7 +32,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div className="flex flex-wrap items-center gap-2">
           {/* Publication Type */}
-          <span className="inline-flex items-center gap-1.5 bg-indigo-500/10 text-indigo-800 border border-indigo-500/20 text-xs font-semibold px-3 py-1 rounded-full shadow-xs">
+          <span className="inline-flex items-center gap-1.5 bg-indigo-500/10 text-indigo-800 border border-indigo-500/20 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm shadow-xs">
             <BookmarkCheck size={13} />
             {publication.type === "journal-article" ? "Journal Article" : "Conference Paper"}
           </span>
@@ -47,7 +47,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
 
           {/* Publisher */}
           {publication.publisher && (
-            <span className="inline-flex items-center gap-1.5 bg-blue-500/10 text-blue-800 border border-blue-500/20 text-xs font-semibold px-3.5 py-1 rounded-full shadow-xs">
+            <span className="inline-flex items-center gap-1.5 bg-blue-500/10 text-blue-800 border border-blue-500/20 text-xs font-semibold px-3.5 py-1 rounded-full backdrop-blur-sm shadow-xs">
               <BookOpen size={13} />
               {publication.publisher}
             </span>
@@ -57,7 +57,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
           {publication.indexedIn?.map((index) => (
             <span
               key={index}
-              className="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-800 border border-emerald-500/20 text-xs font-semibold px-3.5 py-1 rounded-full shadow-xs"
+              className="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-800 border border-emerald-500/20 text-xs font-semibold px-3.5 py-1 rounded-full backdrop-blur-sm shadow-xs"
             >
               <Award size={13} />
               {index} Indexed
@@ -130,7 +130,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
         <h3 className="text-[0.72rem] font-bold uppercase tracking-wider text-zinc-400 mb-2">
           Executive Abstract
         </h3>
-        <p className="text-zinc-700 text-sm sm:text-base leading-relaxed bg-white/80 border border-white/90 p-6 rounded-[22px] shadow-xs">
+        <p className="text-zinc-700 text-sm sm:text-base leading-relaxed bg-white/70 backdrop-blur-sm border border-white/90 p-6 rounded-[22px] shadow-xs">
           {publication.abstract}
         </p>
       </div>
@@ -138,7 +138,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
       {/* Meta Specifications Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         {publication.domain && (
-          <div className="bg-white/60 border border-white/80 rounded-2xl p-4 shadow-xs">
+          <div className="bg-white/50 backdrop-blur-sm border border-white/80 rounded-2xl p-4 shadow-xs">
             <span className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-400 mb-1">
               Domain & Scope
             </span>
@@ -148,7 +148,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
           </div>
         )}
         {publication.methodology && (
-          <div className="bg-white/60 border border-white/80 rounded-2xl p-4 shadow-xs">
+          <div className="bg-white/50 backdrop-blur-sm border border-white/80 rounded-2xl p-4 shadow-xs">
             <span className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-400 mb-1">
               Methodological Approach
             </span>
@@ -158,7 +158,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
           </div>
         )}
         {publication.sector && (
-          <div className="bg-white/60 border border-white/80 rounded-2xl p-4 shadow-xs">
+          <div className="bg-white/50 backdrop-blur-sm border border-white/80 rounded-2xl p-4 shadow-xs">
             <span className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-400 mb-1">
               Empirical Sector
             </span>

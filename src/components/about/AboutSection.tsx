@@ -74,11 +74,17 @@ export function AboutSection({ professor }: AboutSectionProps) {
   const displayedRoles = showMore ? rolesDisplay : rolesDisplay.slice(0, 4);
 
   return (
-    <section id="about" className="relative scroll-mt-20 py-2 sm:py-4" aria-label="About Dr. Abhishek Gupta">
+    <section id="about" className="section-padding relative" aria-label="About Dr. Abhishek Gupta">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-10 sm:mb-12"
+        >
           <span className="text-[0.72rem] font-bold tracking-[0.15em] text-indigo-700 uppercase mb-2.5 inline-block px-3 py-1 rounded-full ios-glass-pill">
             Profile & Leadership
           </span>
@@ -93,13 +99,19 @@ export function AboutSection({ professor }: AboutSectionProps) {
           <p className="text-sm sm:text-base text-zinc-500 max-w-2xl mx-auto leading-relaxed">
             Bridging deep computational science, higher education pedagogy, and career placement mentorship.
           </p>
-        </div>
+        </motion.div>
 
         {/* Primary Row: Bio Card (3 cols) + Expertise Card (2 cols) */}
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start">
 
           {/* Bio Card */}
-          <div className="lg:col-span-3 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-3 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between"
+          >
             <div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 mb-6 pb-6 border-b border-black/[0.06]">
                 <div className="relative w-18 h-18 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border-2 border-white shadow-md shrink-0 bg-indigo-50">
@@ -192,10 +204,16 @@ export function AboutSection({ professor }: AboutSectionProps) {
                 </button>
               </div>
             )}
-          </div>
+          </motion.div>
 
           {/* Expertise Card (sidebar) */}
-          <div className="lg:col-span-2 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-2 ios-glass-card rounded-[28px] p-6 sm:p-9 shadow-md flex flex-col justify-between"
+          >
             <div>
               <span className="inline-flex items-center gap-1.5 text-[0.72rem] font-bold text-indigo-700 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-3 py-1 mb-4 self-start">
                 Areas of Expertise
@@ -294,7 +312,7 @@ export function AboutSection({ professor }: AboutSectionProps) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Interactive Show More / Show Less Toggle Button */}

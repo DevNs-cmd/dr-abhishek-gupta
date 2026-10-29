@@ -43,13 +43,8 @@
 }
 
 html {
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-}
-
-@media (min-width: 1025px) and (hover: hover) {
-  html {
-    scroll-behavior: smooth;
-  }
 }
 
 body {
@@ -58,7 +53,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.55;
-  overflow-x: clip;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── Focus Styles ── */
@@ -68,56 +65,54 @@ body {
   border-radius: 8px;
 }
 
-/* ── iOS Frosted Glass Utilities (Desktop Optimized) ── */
+/* ── iOS Frosted Glass Utilities ── */
 .ios-glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 12px 32px -4px rgba(0, 0, 0, 0.05),
+    0 12px 32px -4px rgba(0, 0, 0, 0.06),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
 }
 
 .ios-glass-card {
-  background: rgba(255, 255, 255, 0.90);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 10px 30px -6px rgba(0, 0, 0, 0.05),
-    0 2px 6px -1px rgba(0, 0, 0, 0.02),
+    0 14px 36px -8px rgba(0, 0, 0, 0.06),
+    0 2px 6px -1px rgba(0, 0, 0, 0.03),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (min-width: 1025px) and (hover: hover) {
-  .ios-glass-card:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.96);
-    border-color: rgba(255, 255, 255, 1);
-    box-shadow:
-      0 20px 40px -10px rgba(0, 0, 0, 0.08),
-      0 4px 12px -2px rgba(0, 0, 0, 0.03),
-      inset 0 1px 2px 0 rgba(255, 255, 255, 1);
-  }
+.ios-glass-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 24px 48px -10px rgba(0, 0, 0, 0.10),
+    0 4px 12px -2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
 }
 
 .ios-glass-pill {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
   border: 1px solid rgba(255, 255, 255, 0.90);
   box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.05),
     inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 /* ── iOS Segmented Control ── */
 .ios-segmented {
-  background: rgba(118, 118, 128, 0.10);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(118, 118, 128, 0.12);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
   border-radius: 9999px;
   padding: 3px;
   display: inline-flex;
@@ -142,7 +137,8 @@ body {
     0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* ── Ambient Background Mesh (Desktop only) ── */
+/* ── Ambient Background Mesh (Fixed behind whole app) ── */
+/* Uses multi-stop radial gradients to fade seamlessly without expensive filter: blur() GPU memory penalties */
 .ios-ambient-layer {
   position: fixed;
   top: 0;
@@ -188,47 +184,31 @@ body {
   pointer-events: none;
 }
 
-/* ── Mobile / Touch Device Extreme Optimization (Android & iOS) ── */
-/* Completely disable GPU-expensive real-time backdrop-filter blurs and layout reflows on mobile */
-@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-  *, *::before, *::after {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+/* ── iOS WebKit Hardware Optimizations ── */
+/* Strictly prevents WebKit GPU memory ceiling exhaustion on iPhones & iPads */
+@supports (-webkit-touch-callout: none) {
+  .ios-glass {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
   }
 
-  .ios-glass,
-  .ios-glass-card,
-  .ios-glass-pill,
-  .ios-glass-nav {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: #ffffff !important;
-    border-color: rgba(0, 0, 0, 0.08) !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .ios-glass-nav {
-    background: rgba(255, 255, 255, 0.98) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  .ios-glass-card {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
   }
 
   .ios-glass-card:hover {
-    transform: none !important;
+    transform: none;
   }
 
   .ios-glass-pill {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-  }
-
-  .ios-segmented {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 
@@ -253,14 +233,14 @@ body {
 
 /* ── Section Spacing ── */
 .section-padding {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 }
 

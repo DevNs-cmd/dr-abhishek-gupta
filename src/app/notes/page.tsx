@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { BookOpen } from "lucide-react";
 import { NotesClient } from "@/components/notes/NotesClient";
 import { notes } from "@/lib/data/notes";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Study Notes & Course Materials",
@@ -15,7 +14,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NotesPage() {
+interface NotesPageProps {
+  searchParams: Promise<{ subject?: string }>;
+}
+
+export default async function NotesPage({ searchParams }: NotesPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const initialSubject = resolvedSearchParams.subject ?? "All";
+
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-28 pb-24">
       {/* Page Header */}
@@ -34,9 +40,7 @@ export default function NotesPage() {
       </div>
 
       {/* Client Filter & Grid */}
-      <Suspense fallback={<div className="py-12 text-center text-zinc-500">Loading notes...</div>}>
-        <NotesClient initialNotes={notes} />
-      </Suspense>
+      <NotesClient initialNotes={notes} initialSubject={initialSubject} />
     </div>
   );
 }

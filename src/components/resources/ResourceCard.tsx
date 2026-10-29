@@ -29,7 +29,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       {/* Header Badges */}
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-black/[0.04] text-zinc-700 border border-black/[0.04]">
+          <span className="text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-black/[0.04] text-zinc-700 border border-black/[0.04] backdrop-blur-sm">
             {resource.category}
           </span>
           {colors && (

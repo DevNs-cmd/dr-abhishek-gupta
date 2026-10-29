@@ -43,7 +43,7 @@ export default function ResearchPage() {
           </div>
 
           {/* ORCID Verified Badge Card */}
-          <div className="shrink-0 p-5 rounded-3xl bg-white/95 border border-zinc-200/90 shadow-sm flex flex-col gap-2.5 max-w-sm">
+          <div className="shrink-0 p-5 rounded-3xl bg-white/80 backdrop-blur-xl border border-zinc-200/90 shadow-sm flex flex-col gap-2.5 max-w-sm">
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-700">
               <ShieldCheck size={16} className="text-emerald-600" />
               <span>ORCID Verified Academic Profile</span>
@@ -65,19 +65,19 @@ export default function ResearchPage() {
 
         {/* Academic Impact Metrics Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-          <div className="p-4 rounded-2xl bg-white/90 border border-zinc-200/80 shadow-xs text-center sm:text-left">
+          <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-zinc-200/80 shadow-xs text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-extrabold text-zinc-950">{publications.length}</div>
             <div className="text-xs font-medium text-zinc-500 mt-0.5">Peer-Reviewed Works</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white/90 border border-zinc-200/80 shadow-xs text-center sm:text-left">
+          <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-zinc-200/80 shadow-xs text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-extrabold text-blue-600">{journalCount}</div>
             <div className="text-xs font-medium text-zinc-500 mt-0.5">Journal Articles & Papers</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white/90 border border-zinc-200/80 shadow-xs text-center sm:text-left">
+          <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-zinc-200/80 shadow-xs text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600">{conferenceCount}</div>
             <div className="text-xs font-medium text-zinc-500 mt-0.5">IEEE & Springer Proceedings</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white/90 border border-zinc-200/80 shadow-xs text-center sm:text-left">
+          <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-zinc-200/80 shadow-xs text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">Scopus</div>
             <div className="text-xs font-medium text-zinc-500 mt-0.5">IEEE, Springer & Elsevier Indexed</div>
           </div>

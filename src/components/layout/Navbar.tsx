@@ -27,17 +27,7 @@ export function Navbar({ professor }: NavbarProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    let ticking = false;
-    const handler = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const isScrolled = window.scrollY > 12;
-          setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+    const handler = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -53,14 +43,14 @@ export function Navbar({ professor }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-          scrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-4"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "py-2.5" : "py-4 sm:py-5"
         }`}
         role="banner"
       >
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <nav
-            className={`flex items-center justify-between rounded-full px-4 sm:px-5 py-2.5 transition-all duration-300 ios-glass ios-glass-nav ${
+            className={`flex items-center justify-between rounded-full px-4 sm:px-5 py-2.5 transition-all duration-300 ios-glass ${
               scrolled
                 ? "shadow-[0_16px_40px_-10px_rgba(0,0,0,0.08)] border-white/90"
                 : "border-white/75"
@@ -160,7 +150,7 @@ export function Navbar({ professor }: NavbarProps) {
       {/* Mobile Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/30 lg:hidden animate-fade-in"
+          className="fixed inset-0 z-40 bg-black/25 backdrop-blur-md lg:hidden animate-fade-in"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
@@ -168,7 +158,7 @@ export function Navbar({ professor }: NavbarProps) {
 
       {/* Mobile iOS Sheet Drawer */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] bg-white shadow-2xl lg:hidden transition-transform duration-300 ease-out border-l border-zinc-200/80 flex flex-col ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] bg-white/95 backdrop-blur-2xl shadow-2xl lg:hidden transition-transform duration-300 ease-out border-l border-white/80 flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"

@@ -94,18 +94,18 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
         {/* Badges */}
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className={`text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border shadow-xs ${colors.bg} ${colors.text} ${colors.border}`}
+            className={`text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border shadow-xs backdrop-blur-sm ${colors.bg} ${colors.text} ${colors.border}`}
           >
             {note.subject}
           </span>
-          <span className="text-xs font-semibold text-zinc-600 bg-white/90 border border-white/80 px-3.5 py-1 rounded-full shadow-xs">
+          <span className="text-xs font-semibold text-zinc-600 bg-white/70 backdrop-blur-sm border border-white/80 px-3.5 py-1 rounded-full shadow-xs">
             {note.unit}
           </span>
-          <span className="text-xs font-medium text-zinc-500 bg-white/90 border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
+          <span className="text-xs font-medium text-zinc-500 bg-white/70 backdrop-blur-sm border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
             <Clock size={12} />
             {note.readingTime} read
           </span>
-          <span className="text-xs font-medium text-zinc-500 bg-white/90 border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
+          <span className="text-xs font-medium text-zinc-500 bg-white/70 backdrop-blur-sm border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
             <FileText size={12} />
             {note.fileType}
           </span>

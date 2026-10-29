@@ -29,7 +29,7 @@ const footerLinks = {
 
 export function Footer({ professor }: FooterProps) {
   return (
-    <footer className="bg-white/95 border-t border-zinc-200/80 pt-16 pb-10" role="contentinfo">
+    <footer className="bg-white/60 backdrop-blur-2xl border-t border-white/80 pt-16 pb-10" role="contentinfo">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
         {/* Top row */}
