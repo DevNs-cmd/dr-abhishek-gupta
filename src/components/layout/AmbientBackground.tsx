@@ -69,7 +69,7 @@ export function AmbientBackground() {
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none hidden lg:block"
       style={{ contain: "strict" }}
       aria-hidden="true"
     >
