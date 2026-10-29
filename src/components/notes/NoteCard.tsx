@@ -21,7 +21,7 @@ export function NoteCard({ note }: NoteCardProps) {
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className={`text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-sm backdrop-blur-sm ${colors.bg} ${colors.text} ${colors.border}`}
+            className={`text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-sm ${colors.bg} ${colors.text} ${colors.border}`}
           >
             {note.subject}
           </span>

@@ -45,7 +45,7 @@ const expertiseTags = [
 export function HeroSection({ professor }: HeroSectionProps) {
   return (
     <section
-      className="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden"
+      className="relative lg:min-h-[88vh] flex items-center pt-24 sm:pt-28 pb-4 sm:pb-8 lg:pb-12 overflow-hidden"
       aria-label="Introduction"
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full">
@@ -53,7 +53,7 @@ export function HeroSection({ professor }: HeroSectionProps) {
 
           {/* Left Column: Text & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
-            <div className="ios-glass-card rounded-[36px] p-6 sm:p-9 lg:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-white/95 bg-white/85 backdrop-blur-2xl">
+            <div className="ios-glass-card rounded-[36px] p-6 sm:p-9 lg:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-white/95">
               {/* Eyebrow Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -102,19 +102,15 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 transition={{ duration: 0.5, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8"
               >
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50 backdrop-blur-md border border-emerald-200/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50/90 border border-emerald-200/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                   Placement Head &bull; NDIM
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/90 border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
                   Editorial Board &bull; Results in Engineering (Elsevier)
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
-                  Research Scholar (KR Mangalam Univ.)
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/80 backdrop-blur-md border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700 bg-white/90 border border-white/90 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
                   Academic Counsellor (IGNOU)
                 </span>
@@ -122,7 +118,7 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   href={professor.linkedInUrl ?? "https://www.linkedin.com/in/dr-abhishek-gupta-80620720/"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-800 bg-blue-50 hover:bg-blue-100 backdrop-blur-md border border-blue-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-800 bg-blue-50/90 hover:bg-blue-100/90 border border-blue-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
                   title="Dr. Abhishek Gupta on LinkedIn"
                 >
                   <LinkedInIcon className="w-3.5 h-3.5 text-blue-600" />
@@ -132,7 +128,7 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   href={professor.youtubeUrl ?? "https://www.youtube.com/@CodecraftGen"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-red-800 bg-red-50 hover:bg-red-100 backdrop-blur-md border border-red-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-red-800 bg-red-50/90 hover:bg-red-100/90 border border-red-200/80 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
                   title="Dr. Abhishek Gupta on YouTube"
                 >
                   <YouTubeIcon className="w-3.5 h-3.5 text-red-600" />
@@ -142,7 +138,7 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   href={professor.orcidUrl ?? "https://orcid.org/0009-0000-9701-246X"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-500/10 hover:bg-emerald-500/20 backdrop-blur-md border border-emerald-500/20 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 px-3 py-1 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors"
                   title="View verified ORCID Record"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
@@ -184,7 +180,7 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 {expertiseTags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium text-zinc-600 bg-white/70 backdrop-blur-sm border border-black/[0.05] px-2.5 py-1 rounded-lg"
+                    className="text-xs font-medium text-zinc-600 bg-white/90 border border-black/[0.06] px-2.5 py-1 rounded-lg"
                   >
                     {tag}
                   </span>
@@ -194,8 +190,8 @@ export function HeroSection({ professor }: HeroSectionProps) {
           </div>
 
           {/* Right Column: iOS Frosted Portrait & Floating Cards (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center items-center relative mt-6 lg:mt-0">
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px]">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-6 lg:mt-0 w-full">
+            <div className="relative w-full max-w-[240px] xs:max-w-[270px] sm:max-w-[380px] lg:max-w-[420px] mx-auto">
 
               {/* Portrait Container */}
               <motion.div
@@ -215,18 +211,18 @@ export function HeroSection({ professor }: HeroSectionProps) {
                 />
 
                 {/* Squircle Glass Frame */}
-                <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden border border-white/90 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.12),_0_4px_16px_rgba(0,0,0,0.04)] bg-white/40 backdrop-blur-sm">
+                <div className="relative aspect-[4/5] rounded-[28px] sm:rounded-[32px] overflow-hidden border border-white/90 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.12),_0_4px_16px_rgba(0,0,0,0.04)] bg-white/60">
                   <Image
                     src={professor.photo}
                     alt={`${professor.name} — Academician and Placement Head at New Delhi Institute of Management`}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 768px) 90vw, 420px"
+                    sizes="(max-width: 640px) 270px, (max-width: 1024px) 380px, 420px"
                     priority
                   />
                   {/* Subtle rim vignette */}
                   <div
-                    className="absolute inset-0 pointer-events-none border border-white/40 rounded-[32px]"
+                    className="absolute inset-0 pointer-events-none border border-white/40 rounded-[28px] sm:rounded-[32px]"
                     aria-hidden="true"
                   />
                 </div>
@@ -257,32 +253,31 @@ export function HeroSection({ professor }: HeroSectionProps) {
                   </motion.div>
                 );
               })}
+            </div>
 
-              {/* Mobile Glass Cards (stacked gracefully under portrait without clipping) */}
-              <div className="grid grid-cols-1 gap-2.5 sm:hidden mt-5 w-full">
-                {floatingCards.map((card) => {
-                  const Icon = card.icon;
-                  return (
-                    <div
-                      key={card.title}
-                      className="ios-glass-card rounded-2xl px-4 py-2.5 flex items-center gap-3 shadow-sm bg-white/90"
-                    >
-                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${card.color}`}>
-                        <Icon size={16} />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-[0.82rem] font-bold text-zinc-900 leading-tight">
-                          {card.title}
-                        </p>
-                        <p className="text-[0.72rem] text-zinc-500 leading-tight font-medium">
-                          {card.subtitle}
-                        </p>
-                      </div>
+            {/* Mobile Glass Cards (stacked gracefully under portrait without clipping) */}
+            <div className="grid grid-cols-1 gap-2.5 sm:hidden mt-5 w-full max-w-[340px] mx-auto">
+              {floatingCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <div
+                    key={card.title}
+                    className="ios-glass-card rounded-2xl px-4 py-2.5 flex items-center gap-3 shadow-sm bg-white/90"
+                  >
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${card.color}`}>
+                      <Icon size={16} />
                     </div>
-                  );
-                })}
-              </div>
-
+                    <div className="text-left">
+                      <p className="text-[0.82rem] font-bold text-zinc-900 leading-tight">
+                        {card.title}
+                      </p>
+                      <p className="text-[0.72rem] text-zinc-500 leading-tight font-medium">
+                        {card.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

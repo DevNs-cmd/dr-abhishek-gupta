@@ -33,7 +33,7 @@ export function LectureCard({ lecture }: LectureCardProps) {
 
         {/* iOS Frosted Play Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-12 h-12 rounded-full bg-white/85 backdrop-blur-xl border border-white/90 shadow-xl flex items-center justify-center text-zinc-900 group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+          <div className="w-12 h-12 rounded-full bg-white/95 border border-white/90 shadow-xl flex items-center justify-center text-zinc-900 group-hover:scale-110 group-hover:bg-white transition-all duration-300">
             <Play size={18} className="fill-zinc-900 translate-x-0.5 text-zinc-900" />
           </div>
         </div>
@@ -41,7 +41,7 @@ export function LectureCard({ lecture }: LectureCardProps) {
         {/* Translucent Subject Badge */}
         <div className="absolute top-3 left-3">
           <span
-            className={`text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-sm backdrop-blur-md ${colors.bg} ${colors.text} ${colors.border}`}
+            className={`text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full border shadow-sm ${colors.bg} ${colors.text} ${colors.border}`}
           >
             {lecture.subject}
           </span>
@@ -49,7 +49,7 @@ export function LectureCard({ lecture }: LectureCardProps) {
 
         {/* iOS Duration Pill */}
         {lecture.duration && (
-          <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white text-[0.72rem] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm border border-white/10">
+          <div className="absolute bottom-3 right-3 bg-black/75 text-white text-[0.72rem] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm border border-white/10">
             <Clock size={11} />
             <span>{lecture.duration}</span>
           </div>

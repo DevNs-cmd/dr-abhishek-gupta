@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { LecturesFilter } from "./LecturesFilter";
 import { LectureCard } from "./LectureCard";
 import type { Lecture } from "@/lib/types";
@@ -15,8 +16,10 @@ export function LecturesClient({
   initialLectures,
   initialSubject = "All",
 }: LecturesClientProps) {
+  const searchParams = useSearchParams();
+  const urlSubject = searchParams.get("subject");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState(initialSubject);
+  const [selectedSubject, setSelectedSubject] = useState(urlSubject || initialSubject);
 
   const subjects = useMemo(() => {
     const list = Array.from(new Set(initialLectures.map((l) => l.subject)));

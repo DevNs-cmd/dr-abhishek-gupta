@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { notes } from "@/lib/data/notes";
 import { lectures } from "@/lib/data/lectures";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://abhishekgupta.ac.in";
   const lastModified = new Date();

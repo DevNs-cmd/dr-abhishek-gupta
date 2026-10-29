@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { NotesFilter } from "./NotesFilter";
 import { NoteCard } from "./NoteCard";
 import type { Note, NoteFileType } from "@/lib/types";
@@ -12,8 +13,10 @@ interface NotesClientProps {
 }
 
 export function NotesClient({ initialNotes, initialSubject = "All" }: NotesClientProps) {
+  const searchParams = useSearchParams();
+  const urlSubject = searchParams.get("subject");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState(initialSubject);
+  const [selectedSubject, setSelectedSubject] = useState(urlSubject || initialSubject);
   const [selectedFileType, setSelectedFileType] = useState("All");
   const [sortBy, setSortBy] = useState<"recent" | "title" | "subject">("recent");
 

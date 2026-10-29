@@ -20,7 +20,7 @@ export const professor: Professor = {
   youtubeUrl: "https://www.youtube.com/@CodecraftGen",
   linkedInUrl: "https://www.linkedin.com/in/dr-abhishek-gupta-80620720/",
   followersCount: "1,700+",
-  bio: "Dr. Abhishek Kumar Gupta is an esteemed academician, educational leader, and technology consultant with extensive contributions across computer science pedagogy, industry campus placements, and applied engineering. Associated with premier institutions including New Delhi Institute of Management (NDIM - BBA & BCA), KR Mangalam University (Research Scholar in SOET), and JIMS Vasant Kunj (former Assistant Professor of IT), he integrates computational theory with modern distributed systems, cybersecurity, and artificial intelligence. Serving as Placement Head at NDIM, Head of the Education Department at Sanjivni Samaj Kalyan Foundation, IGNOU Academic Counsellor, and Technical Consultant to Amar Ekta News and DPIMS Medical College, Dr. Gupta empowers future technologists through rigorous mentorship, national placement drives, and impactful peer-reviewed research indexed in IEEE Xplore, Springer Nature, and Scopus.",
+  bio: "Dr. Abhishek Kumar Gupta is an esteemed academician, educational leader, and technology consultant with extensive contributions across computer science pedagogy, industry campus placements, and applied engineering. Associated with premier institutions including New Delhi Institute of Management (NDIM - BBA & BCA) and JIMS Vasant Kunj (former Assistant Professor of IT), he integrates computational theory with modern distributed systems, cybersecurity, and artificial intelligence. Serving as Placement Head at NDIM, Head of the Education Department at Sanjivni Samaj Kalyan Foundation, IGNOU Academic Counsellor, and Technical Consultant to Amar Ekta News and DPIMS Medical College, Dr. Gupta empowers future technologists through rigorous mentorship, national placement drives, and impactful peer-reviewed research indexed in IEEE Xplore, Springer Nature, and Scopus.",
   shortBio:
     "Placement Head, Academician, Academic Counsellor (IGNOU), Technical Consultant (Amar Ekta News), Advisor (DPIMS Medical College), HOD Edu Dept (Sanjivni Samaj Kalyan Foundation), Coordinator (RNS Charitable Society).",
   photo: "/abhishek-gupta-neww.jpeg",
@@ -50,12 +50,6 @@ export const professor: Professor = {
       institution: "New Delhi Institute of Management (NDIM - BBA & BCA)",
       role: "Assistant Professor & Placement Cell Head",
       type: "primary",
-    },
-    {
-      institution: "KR Mangalam University (SOET)",
-      role: "Research Scholar (School of Engineering & Technology)",
-      type: "secondary",
-      period: "2025 – Present",
     },
     {
       institution: "Jagannath International Management School (JIMS)",

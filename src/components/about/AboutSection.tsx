@@ -74,7 +74,7 @@ export function AboutSection({ professor }: AboutSectionProps) {
   const displayedRoles = showMore ? rolesDisplay : rolesDisplay.slice(0, 4);
 
   return (
-    <section id="about" className="section-padding relative" aria-label="About Dr. Abhishek Gupta">
+    <section id="about" className="relative scroll-mt-20 py-2 sm:py-4" aria-label="About Dr. Abhishek Gupta">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
         {/* Section Header */}

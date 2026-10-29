@@ -15,7 +15,7 @@ export default function HomePage() {
   const mainPublication = publications[0];
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-12 sm:space-y-16 md:space-y-20 pb-20">
       {/* Hero Section */}
       <HeroSection professor={professor} />
 
@@ -114,21 +114,21 @@ export default function HomePage() {
 
             <div className="relative z-10 max-w-3xl">
               <div className="flex flex-wrap items-center gap-2 mb-5">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-white text-xs font-semibold backdrop-blur-md border border-white/15">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-semibold border border-white/20">
                   <Award size={13} className="text-amber-300" />
                   Peer-Reviewed Publication
                 </span>
-                <span className="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 text-xs font-medium border border-indigo-400/30 backdrop-blur-sm">
+                <span className="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 text-xs font-medium border border-indigo-400/30">
                   {mainPublication.journalOrConference ?? mainPublication.publisher}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/30 text-emerald-200 text-xs font-medium border border-emerald-400/30 backdrop-blur-sm">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/30 text-emerald-200 text-xs font-medium border border-emerald-400/30">
                   Scopus Indexed
                 </span>
                 <a
                   href="https://orcid.org/0009-0000-9701-246X"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1 rounded-full bg-emerald-600/30 text-emerald-100 text-xs font-medium border border-emerald-400/30 backdrop-blur-sm hover:bg-emerald-600/50 transition-colors"
+                  className="px-3 py-1 rounded-full bg-emerald-600/30 text-emerald-100 text-xs font-medium border border-emerald-400/30 hover:bg-emerald-600/50 transition-colors"
                 >
                   ORCID: 0009-0000-9701-246X ↗
                 </a>
@@ -159,7 +159,7 @@ export default function HomePage() {
                     href={mainPublication.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all backdrop-blur-md border border-white/15"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all border border-white/20"
                   >
                     View Official DOI Paper ↗
                   </a>

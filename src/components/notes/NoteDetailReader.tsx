@@ -29,7 +29,7 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
   return (
     <div className="ios-glass-card rounded-[32px] overflow-hidden shadow-xl border border-white/90">
       {/* Top iOS Action & Navigation Bar */}
-      <div className="border-b border-black/[0.05] bg-white/50 backdrop-blur-md p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
+      <div className="border-b border-black/[0.05] bg-white/70 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
         {/* iOS Segmented Capsule */}
         <div className="ios-segmented">
           <button
@@ -103,7 +103,7 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
         {activeTab === "study" && (
           <div className="space-y-8 animate-in fade-in duration-300">
             {/* Topic Summary Box */}
-            <div className="p-6 rounded-[22px] bg-white/60 backdrop-blur-md border border-white/80 shadow-sm">
+            <div className="p-6 rounded-[22px] bg-white/80 border border-white/80 shadow-sm">
               <h3 className="text-[0.72rem] font-bold uppercase tracking-wider text-zinc-400 mb-2">
                 Curriculum Topic Summary
               </h3>
@@ -140,7 +140,7 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
               <p>{note.content}</p>
 
               {/* Key Takeaways Frosted Widget */}
-              <div className="p-6 my-6 rounded-[24px] bg-gradient-to-br from-indigo-50/70 to-blue-50/50 backdrop-blur-md border border-indigo-100/80 shadow-sm space-y-3">
+              <div className="p-6 my-6 rounded-[24px] bg-gradient-to-br from-indigo-50 to-blue-50/70 border border-indigo-100/80 shadow-sm space-y-3">
                 <h4 className="text-sm font-bold text-indigo-950 flex items-center gap-2">
                   <Sparkles size={16} className="text-indigo-600" />
                   Key Examination & Placement Takeaways
@@ -161,7 +161,7 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
                 {note.outline?.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-3 p-4 bg-white/60 backdrop-blur-sm border border-white/80 rounded-2xl hover:bg-white/90 transition-all shadow-xs"
+                    className="flex items-start gap-3 p-4 bg-white/70 border border-white/80 rounded-2xl hover:bg-white/90 transition-all shadow-xs"
                   >
                     <span className="w-6 h-6 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-bold flex items-center justify-center shrink-0">
                       {idx + 1}
@@ -237,7 +237,7 @@ export function NoteDetailReader({ note }: NoteDetailReaderProps) {
               {note.keyPoints?.map((point, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-[22px] bg-white/70 backdrop-blur-md border border-white/90 shadow-sm flex flex-col justify-between"
+                  className="p-5 rounded-[22px] bg-white/80 border border-white/90 shadow-sm flex flex-col justify-between"
                 >
                   <div className="flex items-center gap-2 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-2">
                     <BookmarkCheck size={14} />

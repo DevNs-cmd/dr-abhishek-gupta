@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Video } from "lucide-react";
 import { LecturesClient } from "@/components/lectures/LecturesClient";
 import { lectures } from "@/lib/data/lectures";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Curated Video Lectures",
@@ -14,14 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-interface LecturesPageProps {
-  searchParams: Promise<{ subject?: string }>;
-}
-
-export default async function LecturesPage({ searchParams }: LecturesPageProps) {
-  const resolvedSearchParams = await searchParams;
-  const initialSubject = resolvedSearchParams.subject ?? "All";
-
+export default function LecturesPage() {
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-28 pb-24">
       <div className="max-w-2xl mb-10">
@@ -38,7 +32,9 @@ export default async function LecturesPage({ searchParams }: LecturesPageProps) 
         </p>
       </div>
 
-      <LecturesClient initialLectures={lectures} initialSubject={initialSubject} />
+      <Suspense fallback={<div className="py-12 text-center text-zinc-500">Loading lectures...</div>}>
+        <LecturesClient initialLectures={lectures} />
+      </Suspense>
     </div>
   );
 }

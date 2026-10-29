@@ -65,54 +65,56 @@ body {
   border-radius: 8px;
 }
 
-/* ── iOS Frosted Glass Utilities ── */
+/* ── iOS Frosted Glass Utilities (Desktop Optimized) ── */
 .ios-glass {
-  background: rgba(255, 255, 255, 0.90);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 12px 32px -4px rgba(0, 0, 0, 0.06),
+    0 12px 32px -4px rgba(0, 0, 0, 0.05),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
 }
 
 .ios-glass-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(20px) saturate(170%);
-  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 14px 36px -8px rgba(0, 0, 0, 0.06),
-    0 2px 6px -1px rgba(0, 0, 0, 0.03),
+    0 10px 30px -6px rgba(0, 0, 0, 0.05),
+    0 2px 6px -1px rgba(0, 0, 0, 0.02),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
 }
 
-.ios-glass-card:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow:
-    0 24px 48px -10px rgba(0, 0, 0, 0.10),
-    0 4px 12px -2px rgba(0, 0, 0, 0.04),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+@media (min-width: 1025px) and (hover: hover) {
+  .ios-glass-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow:
+      0 20px 40px -10px rgba(0, 0, 0, 0.08),
+      0 4px 12px -2px rgba(0, 0, 0, 0.03),
+      inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  }
 }
 
 .ios-glass-pill {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px) saturate(170%);
-  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.90);
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 2px 6px rgba(0, 0, 0, 0.04),
     inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 /* ── iOS Segmented Control ── */
 .ios-segmented {
-  background: rgba(118, 118, 128, 0.12);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  background: rgba(118, 118, 128, 0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 9999px;
   padding: 3px;
   display: inline-flex;
@@ -137,8 +139,7 @@ body {
     0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* ── Ambient Background Mesh (Fixed behind whole app) ── */
-/* Uses multi-stop radial gradients to fade seamlessly without expensive filter: blur() GPU memory penalties */
+/* ── Ambient Background Mesh (Desktop only) ── */
 .ios-ambient-layer {
   position: fixed;
   top: 0;
@@ -184,31 +185,46 @@ body {
   pointer-events: none;
 }
 
-/* ── iOS WebKit Hardware Optimizations ── */
-/* Strictly prevents WebKit GPU memory ceiling exhaustion on iPhones & iPads */
-@supports (-webkit-touch-callout: none) {
-  .ios-glass {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transform: translateZ(0);
-  }
-
+/* ── Mobile / Touch Device Extreme Optimization (Android & iOS) ── */
+/* Disables expensive real-time GPU blur convolutions on cards & chips during scrolling */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
   .ios-glass-card {
-    background: rgba(255, 255, 255, 0.93);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transform: translateZ(0);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
+    transform: none !important;
   }
 
   .ios-glass-card:hover {
-    transform: none;
+    transform: none !important;
   }
 
   .ios-glass-pill {
-    background: rgba(255, 255, 255, 0.90);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .ios-segmented {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  /* Strip nested backdrop-filter blurs on all content cards, badges, and chips on mobile */
+  [class*="backdrop-blur"]:not(.ios-glass-nav):not(.mobile-drawer-blur) {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Preserve smooth, lightweight frosted glass ONLY on the sticky top navigation */
+  .ios-glass-nav {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
   }
 }
 
@@ -233,14 +249,14 @@ body {
 
 /* ── Section Spacing ── */
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 

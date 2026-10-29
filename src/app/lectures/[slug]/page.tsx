@@ -119,15 +119,15 @@ export default async function LectureDetailPage({
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2">
               <span
-                className={`text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border shadow-xs backdrop-blur-sm ${colors.bg} ${colors.text} ${colors.border}`}
+                className={`text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border shadow-xs ${colors.bg} ${colors.text} ${colors.border}`}
               >
                 {lecture.subject}
               </span>
-              <span className="text-xs font-semibold text-zinc-600 bg-white/70 backdrop-blur-sm border border-white/80 px-3.5 py-1 rounded-full shadow-xs">
+              <span className="text-xs font-semibold text-zinc-600 bg-white/90 border border-white/80 px-3.5 py-1 rounded-full shadow-xs">
                 {lecture.topic}
               </span>
               {lecture.duration && (
-                <span className="text-xs font-medium text-zinc-500 bg-white/70 backdrop-blur-sm border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
+                <span className="text-xs font-medium text-zinc-500 bg-white/90 border border-white/80 px-3 py-1 rounded-full flex items-center gap-1 shadow-xs">
                   <Clock size={12} />
                   {lecture.duration}
                 </span>

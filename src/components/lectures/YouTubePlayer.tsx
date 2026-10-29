@@ -55,7 +55,7 @@ export function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
 
             {/* Central iOS Frosted Play Button */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex items-center gap-3.5 bg-white/95 backdrop-blur-md px-6 py-3.5 rounded-full shadow-2xl group-hover:scale-105 group-hover:bg-white transition-all duration-300 border border-white/80">
+              <div className="flex items-center gap-3.5 bg-white/95 px-6 py-3.5 rounded-full shadow-2xl group-hover:scale-105 group-hover:bg-white transition-all duration-300 border border-white/80">
                 <div className="w-11 h-11 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:bg-red-700 transition-colors">
                   <Play size={20} className="fill-white translate-x-0.5" />
                 </div>
@@ -71,7 +71,7 @@ export function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
             </div>
 
             {/* Bottom Title Bar */}
-            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white text-xs bg-black/70 backdrop-blur-md px-4 py-2.5 rounded-xl sm:rounded-2xl flex items-center justify-between pointer-events-none border border-white/10">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white text-xs bg-black/80 px-4 py-2.5 rounded-xl sm:rounded-2xl flex items-center justify-between pointer-events-none border border-white/10">
               <span className="truncate mr-3 font-medium text-zinc-100">{title}</span>
               <span className="shrink-0 text-red-400 font-semibold text-[0.72rem] flex items-center gap-1.5">
                 <YouTubeIcon className="w-3.5 h-3.5 text-red-500" />

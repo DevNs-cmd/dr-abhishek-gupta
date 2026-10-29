@@ -11,22 +11,24 @@ function subscribe(callback: () => void) {
 function getSnapshot(): boolean {
   if (typeof window === "undefined") return false;
 
-  // Detect iOS (iPhone, iPad, iPod) or touch-based iPadOS
-  const isIOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  // Detect iOS and Android mobile/tablet devices
+  const isMobileOrTabletUA =
+    /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    ) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-  // Detect mobile viewports (<1024px)
-  const isMobile = window.innerWidth < 1024;
+  // Detect touch screens or viewports under 1024px
+  const isTouchDevice =
+    window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+    window.innerWidth < 1024;
 
   // Respect user's reduced-motion preference
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  // Only allow heavy MP4 background video playback on desktop with ample GPU budget.
-  // On iOS Safari, continuous video decoding behind translucent layers causes memory exhaustion.
-  return !isIOS && !isMobile && !prefersReducedMotion;
+  // Only allow heavy MP4 background video playback on desktop with mouse and ample GPU budget.
+  return !isMobileOrTabletUA && !isTouchDevice && !prefersReducedMotion;
 }
 
 function getServerSnapshot(): boolean {
@@ -109,8 +111,8 @@ export function AmbientBackground() {
       {/* Subtle bottom fade so footer transitions cleanly */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#fbfbfd] to-transparent" />
 
-      {/* Ambient light orbs rendered via optimized pure CSS gradients without heavy filter blur */}
-      <div className="ios-ambient-layer opacity-40">
+      {/* Ambient light orbs rendered via optimized pure CSS gradients on desktop only */}
+      <div className="ios-ambient-layer opacity-40 hidden lg:block">
         <div className="ios-orb-1" />
         <div className="ios-orb-2" />
         <div className="ios-orb-3" />
